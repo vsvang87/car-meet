@@ -4,26 +4,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/login.css"/>
-{% block title %}Home Page{% endblock %}
+<link rel="stylesheet" href="/static/css/base.css"/>
+<link rel="stylesheet" href="/static/css/navbar.css"/>
+{% block title %}{% endblock %}
 {% endblock %}
 
 {% block body %}
-<div class="container">
-<h1>Login</h1>
+<nav>
+  <div class="navbar-container">
+<a href="#" class="navbar-logo">Car Meet</a>
+  <ul class="navlinks">
+    <li><a href="/">News</a></li>
+    <li><a href="/meet_up">Meet Up</a></li>
+    <li><a href="/login" class="login-button">Login</a></li>
+  </ul>
+  </div>
+</nav>
 
-<form action="/profile" method="post">
-  <label for="username">Username:</label>
-  <input type="text" name="name" id="username"/>
-  <lable for="email">Email:</lable>
-  <input type="email" name="email" id="email"/>
-  <label for="password">Password:</label>
-  <input type="password" name="password" id="password"/>
-  <input type="submit" value="submit" class="submit-button"/>
-</form>
-
-</div>
-
+<section>
+  <div class="home-container">
+    <h1>This is the Home Page</h1>
+  </div>
+</section>
 
 {% endblock %}
 

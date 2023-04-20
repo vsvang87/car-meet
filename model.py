@@ -63,7 +63,7 @@ class Post(db.Model):
 
 
 #------------------------------------------------------------------
-def connect_to_db(flask_app, db_uri="postgresql:///ratings", echo=True):
+def connect_to_db(flask_app, db_uri="postgresql:///car_meet", echo=True):
     flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     flask_app.config["SQLALCHEMY_ECHO"] = echo
     flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -77,3 +77,4 @@ def connect_to_db(flask_app, db_uri="postgresql:///ratings", echo=True):
 if __name__ == "__main__":
     from server import app
     connect_to_db(app)
+    db.create_all()

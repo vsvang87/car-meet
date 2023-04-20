@@ -1,8 +1,39 @@
 {% extends "base.html" %}
 {% block title %}User Profile{% endblock %}
 
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/base.css"/>
+<link rel="stylesheet" href="/static/css/userprofile.css"/>
+{% endblock %}
+
 {% block body %}
-<h1>Meet up Page</h1>
+<nav>
+  <ul class="navlinks">
+    <li><a href="#">Meet Up</a></li>
+    <li><a href="#">Post</a></li>
+    <li><a href="#">Log Out</a></li>
+  </ul>
+</nav>
+
+
+<section class="user-profile">
+<div class="p-container">
+  <div class="p-center-container">
+<div class="p-image p-col">
+    <img src="/static/image/civic.jpg" alt="hond civic si"/>
+  </div>
+  <div class="p-info">
+    <p>Name</p>
+  </div>
+
+
+  </div>
+  
+</div>
+</section>
 {% endblock %}
 
 

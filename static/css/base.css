@@ -1,0 +1,18 @@
+:root {
+  --fs-title: 2.5rem;
+  --fs-subtitle: 2rem;
+
+  --clr-blue: #5585b5;
+  --clr-lightGray: #d9dad7;
+  --clr-darkGray: #3e4a61;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+.home-container {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+}
