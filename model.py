@@ -19,6 +19,7 @@ class User(db.Model):
     city = db.Column(db.String(50), nullable=True)
     state = db.Column(db.String(50), nullable=True)
     zipcode = db.Column(db.Integer, nullable=True)
+    image_url = db.Column(db.String, nullable=True)
 
     meet_ups = db.relationship("Meetup", back_populates="user")
     posts = db.relationship("Post", back_populates="user")

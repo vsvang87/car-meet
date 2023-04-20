@@ -38,6 +38,7 @@ def login_user():
 
     if not user or user.password != password:
         flash("Incorrect email or password")
+        return redirect("/login")
     else:
         session['user_email'] = user.email
         flash(f"Welcome {user.email}")
@@ -68,7 +69,7 @@ def create_new_users():
         user = crud.create_user(first_name, last_name, username, email, password)
         db.session.add(user)
         db.session.commit()
-        
+        session['user_email'] = user.email
 
     return redirect("/userprofile")
         
@@ -77,17 +78,26 @@ def create_new_users():
 @app.route("/userprofile")
 def user_profile():
 
-    return render_template("userprofile.html")
+    email = session['user_email']
+
+    user = crud.get_user_by_email(email)
+    return render_template("userprofile.html", user=user)
 
 
-@app.route("/userprofile", methods=["POST"])
+@app.route("/post-form-data", methods=["POST"])
 def userprofile_username():
 
-    my_file = request.form.get('my-file')
+    my_file = request.files['my-file']
     result = cloudinary.uploader.upload(my_file, api_key = CLOUDINARY_KEY, api_secret = CLOUDINARY_SECRET, cloud_name = CLOUD_NAME)
-    img_url = result['secure_url']
+    image_url = result['secure_url']
+    
+    email = session['user_email']
+    user = crud.get_user_by_email(email)
+    crud.update_img_url(image_url, user)
+    db.session.add(user)
+    db.session.commit()
 
-    return redirect("/userprofile", img=img_url)
+    return redirect("/userprofile")
     
     
 

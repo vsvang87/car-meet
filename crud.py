@@ -48,3 +48,9 @@ def meet_up(datetime, city, state, zipcode, user_id):
     meetup = Meetup(datetime=datetime, city=city, state=state, zipcode=zipcode, user_id=user_id)
 
     return meetup
+
+def update_img_url(image_url, user):
+
+    user.image_url = image_url
+
+    return image_url
