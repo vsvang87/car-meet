@@ -21,7 +21,8 @@ def get_user_by_id(user_id):
 
 #-----------------get user by username----------------------------#
 def get_user_by_username(username):
-    return User.query.filter(User.username == username).all()
+
+    return User.query.filter(User.username == username).first()
 
 
 #-----------------get_user_by_email-------------------------------#

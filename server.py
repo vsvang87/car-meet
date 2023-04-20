@@ -1,9 +1,16 @@
-from flask import Flask, render_template, request, flash, session, redirect
+from flask import Flask, render_template, request, flash, session, redirect, url_for
 from model import connect_to_db, db, User, Post, Meetup
 import crud
 
+import cloudinary.uploader
+import os
+
+CLOUDINARY_KEY = os.environ['CLOUDINARY_KEY']
+CLOUDINARY_SECRET = os.environ['CLOUDINARY_SECRET']
+CLOUD_NAME = "dha9labk1"
+
 app = Flask(__name__)
-app.secret_key = "dev"
+app.secret_key = "DEV"
 from jinja2 import StrictUndefined
 
 #--------------------------home page--------------------------------#
@@ -14,9 +21,8 @@ def home():
 
 
 #--------------------------User Login GET-----------------------------#
-@app.route("/login", methods=["GET"])
+@app.route("/login")
 def login():
-
 
     return render_template("login.html")
 
@@ -24,7 +30,7 @@ def login():
 @app.route("/login", methods=["POST"])
 def login_user():
     
-    username = request.form.get('username')
+    username = request.form.get('user_name')
     email = request.form.get('email')
     password = request.form.get('password')
 
@@ -72,6 +78,18 @@ def create_new_users():
 def user_profile():
 
     return render_template("userprofile.html")
+
+
+@app.route("/userprofile", methods=["POST"])
+def userprofile_username():
+
+    my_file = request.form.get('my-file')
+    result = cloudinary.uploader.upload(my_file, api_key = CLOUDINARY_KEY, api_secret = CLOUDINARY_SECRET, cloud_name = CLOUD_NAME)
+    img_url = result['secure_url']
+
+    return redirect("/userprofile", img=img_url)
+    
+    
 
 #---------------------------meet up-----------------------------#
 @app.route("/meet_up")

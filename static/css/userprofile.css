@@ -1,4 +1,8 @@
-
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
 nav{
   position: fixed;
@@ -10,6 +14,10 @@ nav{
   min-height: 100vh;
   background: lightslategray;
   width: 15%;
+}
+.welcome-msg {
+  color: #fff;
+  padding-top: 3rem;
 }
 nav .navlinks {
   padding: 0;
@@ -31,17 +39,28 @@ nav .navlinks li a:hover {
 section {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 .p-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  border: 1px solid lightgray;
+  align-items: center;
+  /* border: 1px solid lightgray; */
   min-height: 100vh;
+  width: 50%;
 }
 
-.p-container .p-image img {
+.p-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.p-col {
+  width: 50%;
+}
+.p-center-container .p-image img {
   width: 100%;
+ 
 }
 

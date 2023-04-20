@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: lightgray;
 }
 .container {
   width: min(80%, 90rem);
@@ -18,6 +19,7 @@ body {
   width: 40%;
   border: 1px solid lightslategray;
   box-shadow: 5px 10px 5px 0 rgba(0, 0, 0, 0.2);
+  background: #fff;
 }
 .login-title {
   background: lightslategray;
