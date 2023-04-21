@@ -1,0 +1,14 @@
+
+section .bg-img-container{
+  background-image: url('../image/car-meet.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  min-height: 25vh;
+}
+
+.center-content {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+}

@@ -12,8 +12,6 @@
 
 {% block body %}
 <nav>
-  <p class="welcome-msg">Hi</p>
-
   <ul class="navlinks">
     <li><a href="/meet_up">Meet Up <i class="fa-solid fa-handshake"></i></a></li>
     <li><a href="/post_content">Post <i class="fa-solid fa-comment"></i></a></li>
@@ -27,24 +25,26 @@
   <div class="p-center-container">
     <div class="p-image p-col">
       <img src="{{ user.image_url }}" alt=" "/>
+
+      <form action="/post-form-data" method="post" enctype="multipart/form-data">
+        <input type="file" name="my-file"/>
+        <input type="submit" value="submit"/>
+      </form>
+
     </div>
 
-    <div class="p-info p-col">
-      <p>Name</p>
-      <p>Location</p>
-      <p>Make</p>
-      <p>Model</p>
+    <div class="p-info p-col" id="user-info">
+      <p id="first-name">First Name</p>
+      <p id="last-name">Last Name</p>
+      <p id="city">City</p>
+      <p id="state">State</p>
     </div>
 
   </div>
-  
 </div>
-
-<form action="/post-form-data" method="post" enctype="multipart/form-data">
-  <input type="file" name="my-file"/>
-  <input type="submit" value="submit"/>
-</form>
 </section>
+
+<script src="/static/js/userprofile.js"></script>
 {% endblock %}
 
 

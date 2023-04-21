@@ -1,6 +1,6 @@
 
 nav {
-  background: lightslategray;
+  /* background: lightslategray; */
   font-size: 1.2rem;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -8,13 +8,13 @@ nav {
 .navbar-container {
   width: min(80%, 90rem);
   margin-inline: auto;
-   display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .navbar-logo {
   text-decoration: none;
-  color: #fff;
+  color: #353535;
 }
 .navlinks {
   display: flex;
@@ -27,15 +27,16 @@ nav {
 }
 .navlinks li a {
   text-decoration: none;
-  color: #fff;
+  color: #353535;
   transition: 0.15s ease-in-out;
 }
-/* .navlinks li a:hover {
-  color: lightcoral;
-} */
+.navlinks li a:hover {
+  border-bottom: 1px solid #353535;
+}
 
-.login-button {
+
+/* .login-button {
   background: lightcoral;
   padding: 0.5rem 1.5rem;
   border-radius: 50px 50px;
-}
+} */

@@ -13,16 +13,23 @@ app = Flask(__name__)
 app.secret_key = "DEV"
 from jinja2 import StrictUndefined
 
-#--------------------------home page--------------------------------#
+#--------------------------Home page--------------------------------#
 @app.route("/")
 def home():
     
     return render_template("index.html")
 
 
-#--------------------------User Login GET-----------------------------#
+#--------------------------User Login-----------------------------#
 @app.route("/login")
 def login():
+
+    # email = request.args.get("email")
+    # password = request.args.get("password")
+
+    # user = crud.get_user_by_email(email)
+    # if not user or user.password != password:
+    #     flash("Incorrect email or password")
 
     return render_template("login.html")
 
@@ -42,8 +49,8 @@ def login_user():
     else:
         session['user_email'] = user.email
         flash(f"Welcome {user.email}")
-
-    return redirect("/userprofile")
+        return redirect("/userprofile")
+    
 
 #-------------------------create new user----------------------#
 @app.route("/create_user", methods=["GET"])
@@ -79,10 +86,9 @@ def create_new_users():
 def user_profile():
 
     email = session['user_email']
-
     user = crud.get_user_by_email(email)
+    
     return render_template("userprofile.html", user=user)
-
 
 @app.route("/post-form-data", methods=["POST"])
 def userprofile_username():
@@ -91,8 +97,11 @@ def userprofile_username():
     result = cloudinary.uploader.upload(my_file, api_key = CLOUDINARY_KEY, api_secret = CLOUDINARY_SECRET, cloud_name = CLOUD_NAME)
     image_url = result['secure_url']
     
+    #getting user session
     email = session['user_email']
+    # getting the email function from crud
     user = crud.get_user_by_email(email)
+    # updating user image from crud
     crud.update_img_url(image_url, user)
     db.session.add(user)
     db.session.commit()
@@ -115,8 +124,16 @@ def post_content():
     return render_template("post_content.html")
 
 
+#------------------------Log Out-----------------------------#
+@app.route("/logout")
+def logout():
 
 
+
+    return redirect("/")
+
+
+#-----------------------------------------------------------#
 
 if __name__ == '__main__':
     connect_to_db(app)
