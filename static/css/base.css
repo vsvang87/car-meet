@@ -7,8 +7,11 @@
   --clr-darkGray: #3e4a61;
 }
 
-body {
+* {
   font-family: 'Quicksand', sans-serif;
+}
+
+body {
   padding: 0;
   margin: 0;
 }

@@ -23,17 +23,18 @@
 
 <section>
   <div class="bg-img-container">
-    
   </div>
 </section>
 
-<section class="search-container">
+<section class="find-meet-container">
   <div class="center-content">
     <div class="find-meet">
-      <h2>Find Local Car Meets</h2>
-      <a href=""></a>
+      <h1 class="title">Find Local Car Meet or Host a Meet - Up</h1>
+      <a href="#" class="host-meet-button">Host Meet-Up</a>
     </div>
-    <select name="state" id="state">
+
+    <div class="state-city-container">
+      <select name="state" id="state" class="state-selection">
       <option value="Alabama">Alabama</option>
       <option value="Arizona">Arizona</option>
       <option value="Arkansas">Arkansas</option>
@@ -82,21 +83,31 @@
       <option value="Wyoming">Wyoming</option>
     </select>
 
-    <select name="city" id="city">
+    <select name="city" id="city" class="state-selection">
       <option value="city">city</option>
     </select>
-    <button class="search-button">Search</button>
-  </div>
+    <button class="search-button" id="search-button">Search</button>
+    </div>
 
-  <div class="search-content">
-    <p>search content goes here</p>
   </div>
-  
 </section>
 
+<section class="search-container">
+  <div class="center-content">
+    <div class="search-content">
+      <h1>Search content goes here</h1>
+    </div>
+  </div>
+</section>
+
+<script src="/static/js/meet_up.js"></script>
 {% endblock %}
 
 
 {% block footer %}
-
+<footer class="footer">
+  <div class="center-content">
+    <h2>Footer Content</h2>
+  </div>
+</footer>
 {% endblock %}

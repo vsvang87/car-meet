@@ -1,6 +1,5 @@
 
 nav {
-  /* background: lightslategray; */
   font-size: 1.2rem;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -27,16 +26,22 @@ nav {
 }
 .navlinks li a {
   text-decoration: none;
-  color: #353535;
   transition: 0.15s ease-in-out;
 }
-.navlinks li a:hover {
+.text-black {
+  color:#353535;
+}
+.text-black:hover {
   border-bottom: 1px solid #353535;
 }
 
-
-/* .login-button {
+.login-button {
+  border: 1px solid lightcoral;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: lightcoral;
+}
+.login-button:hover {
   background: lightcoral;
-  padding: 0.5rem 1.5rem;
-  border-radius: 50px 50px;
-} */
+  color: #fff;
+}

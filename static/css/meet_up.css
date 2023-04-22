@@ -8,7 +8,78 @@ section .bg-img-container{
   min-height: 25vh;
 }
 
+.find-meet-container {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+}
+
 .center-content {
   width: min(80%, 90rem);
   margin-inline: auto;
+  
+}
+.find-meet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+.host-meet-button {
+  border: 1px solid lightcoral;
+  text-decoration: none;
+  color: lightcoral;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  transition: 0.15s ease-in-out;
+}
+.host-meet-button:hover {
+  background: lightcoral;
+  color: #fff;
+}
+.state-city-container {
+  padding: 2rem 0;
+}
+
+.state-selection {
+  outline: none;
+  border: 1px solid lightgray;
+  padding: 1rem 5rem 1rem 0.5rem;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+.search-button {
+  border: none;
+  background: lightcoral;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+}
+.search-button:hover {
+  background: transparent;
+  color: lightcoral;
+  border: 1px solid lightcoral;
+}
+
+/*-------------------------Search Content-------------------------*/
+.search-container {
+  min-height: 40vh;
+  border: 1px solid black;
+  padding: 2rem 0;
+}
+
+
+
+/*------------------------Footer---------------------------------*/
+.footer {
+  background: #353535;
+  color: #fff;
+  padding: 1rem 0;
+  min-height: 15vh;
 }
