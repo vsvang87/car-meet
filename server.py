@@ -48,6 +48,7 @@ def login_user():
         return redirect("/login")
     else:
         session['user_email'] = user.email
+        session['user_name'] = user.username
         flash(f"Welcome {user.email}")
         return redirect("/userprofile")
     
@@ -87,8 +88,9 @@ def user_profile():
 
     email = session['user_email']
     user = crud.get_user_by_email(email)
-    
+
     return render_template("userprofile.html", user=user)
+
 
 @app.route("/post-form-data", methods=["POST"])
 def userprofile_username():
@@ -96,7 +98,6 @@ def userprofile_username():
     my_file = request.files['my-file']
     result = cloudinary.uploader.upload(my_file, api_key = CLOUDINARY_KEY, api_secret = CLOUDINARY_SECRET, cloud_name = CLOUD_NAME)
     image_url = result['secure_url']
-    
     #getting user session
     email = session['user_email']
     # getting the email function from crud
@@ -109,12 +110,53 @@ def userprofile_username():
     return redirect("/userprofile")
     
     
+@app.route("/userprofile", methods=["POST"])
+def add_city_and_state():
 
-#---------------------------meet up-----------------------------#
+    #getting city and state from form
+    city = request.form.get("city")
+    state = request.form.get("state")
+
+    email = session['user_email']
+    user = crud.get_user_by_email(email)
+    user = crud.create_city_and_state(city, state, user)
+    db.session.add(user)
+    db.session.commit()
+
+    return redirect("/userprofile")
+#---------------------------search meet up-----------------------------#
 @app.route("/meet_up")
 def meet_up():
     
-    return render_template("meet_up.html")
+    state = request.args.get("state")
+    city = request.args.get("city")
+
+    meetups = Meetup.query.filter(Meetup.state == state, Meetup.city == city).all()
+
+    return render_template("meet_up.html", meetups=meetups)
+
+
+@app.route("/create_meet_up_form")
+def create_meet_up_form():
+    #this route is to display the form
+    return render_template("create_meet_up.html")
+
+
+
+@app.route("/create_meet_up")
+def meetup():
+
+    date_time = request.form.get("datetime")
+    city = request.form.get("city")
+    state = request.form.get("state")
+    zipcode = request.form.get("zipcode")
+    # crud.meet_up(datetime, city, state, zipcode, user_id)
+    #this data need to comes from the form in the create_meet-up.html
+
+
+    return render_template("create_meet_up.html")
+
+
 
 
 #------------------------Post Content-------------------------#
@@ -128,9 +170,15 @@ def post_content():
 @app.route("/logout")
 def logout():
 
-
+    session.pop('username')
 
     return redirect("/")
+
+#--------------------------Host Event-----------------------#
+@app.route("/host-event")
+def host_event():
+
+    return render_template("host_event.html")
 
 
 #-----------------------------------------------------------#

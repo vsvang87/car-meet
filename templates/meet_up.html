@@ -16,7 +16,9 @@
   <div class="navbar-container">
 <a href="/" class="navbar-logo">Car Meet <i class="fa-solid fa-car"></i></a>
   <ul class="navlinks">
-    <li><a href="/">News</a></li>
+    <li><a href="/post_content" class="text-black">Post</a></li>
+    <li><a href="/userprofile" class="text-black">Profile</a></li>
+    <li><a href="/" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
   </div>
 </nav>
@@ -29,64 +31,18 @@
 <section class="find-meet-container">
   <div class="center-content">
     <div class="find-meet">
-      <h1 class="title">Find Local Car Meet or Host a Meet - Up</h1>
-      <a href="#" class="host-meet-button">Host Meet-Up</a>
+      <h1 class="title">Find Local Car Meet</h1>
+      <a href="/post_content" class="host-meet-button">Post Content</a>
     </div>
 
     <div class="state-city-container">
-      <select name="state" id="state" class="state-selection">
-      <option value="Alabama">Alabama</option>
-      <option value="Arizona">Arizona</option>
-      <option value="Arkansas">Arkansas</option>
-      <option value="California">California</option>
-      <option value="Colorado">Colorado</option>
-      <option value="Delaware">Delaware</option>
-      <option value="Florida">Florida</option>
-      <option value="Georgia">Georgia</option>
-      <option value="Idaho">Idaho</option>
-      <option value="Illinois">Illinois</option>
-      <option value="Indiana">Indiana</option>
-      <option value="Iowa">Iowa</option>
-      <option value="Kansas">Kansas</option>
-      <option value="Kentucky">Kentucky</option>
-      <option value="Maine">Maine</option>
-      <option value="Maryland">Maryland</option>
-      <option value="Massachusetts">Massachusetts</option>
-      <option value="Michigan">Michigan</option>
-      <option value="Minnesota">Minnesota</option>
-      <option value="Mississippi">Mississippi</option>
-      <option value="Missouri">Missouri</option>
-      <option value="Montana">Montana</option>
-      <option value="Nebraska">Nebraska</option>
-      <option value="Nevada">Nevada</option>
-      <option value="New Hampshire">New Hampshire</option>
-      <option value="New Mexico">New Mexico</option>
-      <option value="New Jersey">New Jersey</option>
-      <option value="New York">New York</option>
-      <option value="North Carolina">North Carolina</option>
-      <option value="North Dakota">North Dakota</option>
-      <option value="Ohio">Ohio</option>
-      <option value="Oklahoma">Oklahoma</option>
-      <option value="Oregon">Oregon</option>
-      <option value="Pennsylvania">Pennsylvania</option>
-      <option value="Rhode Island">Rhode Island</option>
-      <option value="South Carolina">South Carolina</option>
-      <option value="South Dakota">South Dakota</option>
-      <option value="Tennessee">Tennessee</option>
-      <option value="Texas">Texas</option>
-      <option value="Utah">Utah</option>
-      <option value="Vermont">Vermont</option>
-      <option value="Virginia">Virginia</option>
-      <option value="Washington">Washington</option>
-      <option value="West Virginia">West Virginia</option>
-      <option value="Wisconsin">Wisconsin</option>
-      <option value="Wyoming">Wyoming</option>
-    </select>
 
-    <select name="city" id="city" class="state-selection">
-      <option value="city">city</option>
-    </select>
-    <button class="search-button" id="search-button">Search</button>
+      <form action="/meet_up" method="GET">
+        <input type="text" name="state" class="state-selection" placeholder="Enter State..."/>
+        <input type="city" name="city" class="state-selection" placeholder="Enter City..."/>
+        <input type="submit" class="search-button" id="search-button" value="Search"/>
+      </form>
+    
     </div>
 
   </div>
@@ -95,7 +51,12 @@
 <section class="search-container">
   <div class="center-content">
     <div class="search-content">
+      {% if meetups %}
+      {{ meetups }}
+      {% endif %}
       <h1>Search content goes here</h1>
+
+      
     </div>
   </div>
 </section>

@@ -7,16 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="/static/css/base.css"/>
+<link rel="stylesheet" href="/static/css/navbar.css"/>
 <link rel="stylesheet" href="/static/css/userprofile.css"/>
 {% endblock %}
 
 {% block body %}
 <nav>
-  <ul class="navlinks">
+  <div class="navbar-container">
+    <ul class="navlinks">
     <li><a href="/meet_up">Meet Up <i class="fa-solid fa-handshake"></i></a></li>
     <li><a href="/post_content">Post <i class="fa-solid fa-comment"></i></a></li>
-    <li><a href="/">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
+   <div class="logout-div">
+    <a href="/" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a>
+   </div>
+  </div>
 </nav>
 
 
@@ -26,18 +31,27 @@
     <div class="p-image p-col">
       <img src="{{ user.image_url }}" alt=" "/>
 
-      <form action="/post-form-data" method="post" enctype="multipart/form-data">
-        <input type="file" name="my-file"/>
-        <input type="submit" value="submit"/>
+      <form action="/post-form-data" method="post" enctype="multipart/form-data" class="cloudinary-form">
+        <input type="file" name="my-file" class="upload-button"/>
+        <input type="submit" value="submit" class="upload-button"/>
       </form>
 
     </div>
 
     <div class="p-info p-col" id="user-info">
-      <p id="first-name">First Name</p>
-      <p id="last-name">Last Name</p>
-      <p id="city">City</p>
-      <p id="state">State</p>
+      <p class="user-name">Hello, {{ session['user_name'] }}</p>
+      <form action="/userprofile" method="post" class="city-state-form">
+        <p>Enter your city and state</p>
+        <div class="input-group">
+          <input type="text" name="city" placeholder="City"/>
+        </div>
+        <div class="input-group">
+          <input type="text" name="state" placeholder="State"/>
+        </div>
+        <div class="input-group">
+          <button type="submit" class="save-button">save</button>
+        </div>
+      </form>
     </div>
 
   </div>

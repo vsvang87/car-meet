@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+
+{% block head %}{% endblock %}
+
+
+{% block body %}
+<section>
+  <div class="meet-up-container">
+    <form action="/create_meet_up" method="POST">
+      <div class="form-group">
+        <label for="datetime">Date time:</label>
+      <input type="text" name="datetime" id="datetime"/>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" name="city" id="city">
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" name="state" id="state">
+      </div>
+      <div class="form-group">
+        <label for="zipcode">Zipcode</label>
+        <input type="text" name="zipcode" id="zipcode">
+      </div>
+      <div class="form-group"></div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+<!--
+  Create a form to submit the data for this meet up. This 
+-->

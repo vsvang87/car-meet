@@ -16,16 +16,23 @@
 <a href="#" class="navbar-logo">Car Meet <i class="fa-solid fa-car"></i></a>
   <ul class="navlinks">
     <li><a href="/" class="text-black">News</a></li>
-    <li><a href="/meet_up" class="text-black">Meet Up </a></li>
     <li><a href="/login" class="login-button">Login</a></li>
     <li><a href="/create_user" class="login-button">Sign Up</a></li>
   </ul>
   </div>
 </nav>
 
-<section>
-  <div class="home-container">
-    <h1>This is the Home Page</h1>
+<section class="home-page">
+  <div class="base-container">
+    <h1 class="intro-message">
+      Meet and greet in your location. Meet other drivers and show off your ride.
+    </h1>
+  </div>
+</section>
+
+<section class="news-container">
+  <div class="base-container">
+    <h1>Latest News</h1>
   </div>
 </section>
 
@@ -33,5 +40,9 @@
 
 
 {% block footer %}
-
+<footer class="footer">
+  <div class="base-container">
+    <h1>Footer Content goes here</h1>
+  </div>
+</footer>
 {% endblock %}

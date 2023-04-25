@@ -3,23 +3,27 @@ body {
   padding: 0;
   margin: 0;
   height: 100vh;
+}
+.container {
+  width: 100%;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: lightgray;
 }
-.container {
-  width: min(80%, 90rem);
-  margin-inline: auto;
+.form-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  min-height: 50vh;
-  width: 40%;
   border: 1px solid lightslategray;
+  border-radius: 5px;
   box-shadow: 5px 10px 5px 0 rgba(0, 0, 0, 0.2);
-  background: #fff;
+  width: 50%;
+  min-height: 50vh;
+}
+.form {
+  width: 60%;
 }
 .login-title {
   background: lightslategray;
@@ -34,10 +38,11 @@ body {
   width: 100%;
 }
 .form-group input {
-  width: 100%;
+  width: 95%;
   outline: none;
   border: 1px solid lightgray;
-  padding: 0.5rem 0;
+  border-radius: 5px;
+  padding: 0.7rem 0.5rem;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .form-group .login-button {
@@ -46,17 +51,12 @@ body {
   background: lightcoral;
   color: #fff;
   width: 100%;
-  margin-top: 0.7rem;
+  margin: 0.7rem 0;
 }
 .create-link {
   /* text-decoration: none; */
   color: black;
 }
-.create-button {
-  background: lightcoral;
-  color: #fff;
-  font-size: 1.2rem;
-  cursor: pointer;
-  margin-top: 0.7rem;
-  margin-bottom: 1.5rem;
+.create {
+  margin-bottom: 2rem;
 }
