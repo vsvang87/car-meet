@@ -49,7 +49,7 @@ section .bg-img-container{
   border: 1px solid lightgray;
   padding: 1rem 5rem 1rem 0.5rem;
   font-size: 1rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 .search-button {
   border: none;
@@ -70,16 +70,7 @@ section .bg-img-container{
 /*-------------------------Search Content-------------------------*/
 .search-container {
   min-height: 40vh;
-  border: 1px solid black;
   padding: 2rem 0;
+  background: rgb(235, 235, 235);
 }
 
-
-
-/*------------------------Footer---------------------------------*/
-.footer {
-  background: #4b4b4b;
-  color: #fff;
-  padding: 1rem 0;
-  min-height: 15vh;
-}

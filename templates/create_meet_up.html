@@ -1,16 +1,39 @@
 {% extends "base.html" %}
-{% block title %}{% endblock %}
+{% block title %}Create meet up{% endblock %}
 
-{% block head %}{% endblock %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/static/css/base.css"/>
+<link rel="stylesheet" href="/static/css/navbar.css"/>
+<link rel="stylesheet" href="/static/css/create_meet_up.css"/>
+{% endblock %}
 
 
 {% block body %}
-<section>
+<nav>
+  <div class="navbar-container">
+<a href="#" class="navbar-logo">Car Meet <i class="fa-solid fa-car"></i></a>
+  <ul class="navlinks">
+    <li><a href="/meet_up" class="text-black">Search</a></li>
+    <li><a href="/userprofile" class="text-black">Profile</a></li>
+    <li><a href="/" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
+  </ul>
+  </div>
+</nav>
+
+
+<section class="create-meet-section">
   <div class="meet-up-container">
-    <form action="/create_meet_up" method="POST">
+
+   <div class="meet-form meet-col">
+       <form action="/create_meet_up_form" method="POST">
+       <h1>Host your own meet up</h1>
       <div class="form-group">
-        <label for="datetime">Date time:</label>
-      <input type="text" name="datetime" id="datetime"/>
+        <label for="datetime">Date Time</label>
+      <input type="datetime-local" name="datetime" id="datetime"/>
       </div>
       <div class="form-group">
         <label for="city">City</label>
@@ -24,15 +47,35 @@
         <label for="zipcode">Zipcode</label>
         <input type="text" name="zipcode" id="zipcode">
       </div>
-      <div class="form-group"></div>
+      <div class="form-group">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
     </form>
+
+   </div>
+   
+
+    <div class="meet-up-content meet-col">
+      <div class="inner-content">
+        <h3>Hosting</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit tenetur exercitationem magni alias a dolore, quaerat neque corrupti. Odit veniam consequatur maiores saepe expedita tenetur reprehenderit necessitatibus ab nam amet.</p>
+        <h3>Support Your Local Groups</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, amet vitae magnam inventore fugit perferendis ipsam. Obcaecati, magnam iusto nisi voluptates saepe aperiam quaerat. Nesciunt illum sapiente quaerat optio voluptatum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem consectetur quod iusto natus odit molestias. Earum laboriosam deserunt repellendus error cum quo consequuntur beatae. Voluptates nulla ipsum architecto mollitia culpa!</p>
+      </div>
+    </div>
   </div>
 </section>
 
 {% endblock %}
 
-{% block footer %}{% endblock %}
+{% block footer %}
+<footer class="footer">
+  <div class="center-content">
+    <h2>Footer Content</h2>
+  </div>
+</footer>
+{% endblock %}
 
 <!--
-  Create a form to submit the data for this meet up. This 
+  Create a form to submit the data for this meet up.  
 -->

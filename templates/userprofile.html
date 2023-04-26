@@ -15,8 +15,8 @@
 <nav>
   <div class="navbar-container">
     <ul class="navlinks">
-    <li><a href="/meet_up">Meet Up <i class="fa-solid fa-handshake"></i></a></li>
-    <li><a href="/post_content">Post <i class="fa-solid fa-comment"></i></a></li>
+    <li><a href="/meet_up" class="text-black">Search <i class="fa-solid fa-handshake"></i></a></li>
+    <li><a href="/create_meet_up_form" class="text-black">Create Meet <i class="fa-solid fa-comment"></i></a></li>
   </ul>
    <div class="logout-div">
     <a href="/" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a>
@@ -39,7 +39,7 @@
     </div>
 
     <div class="p-info p-col" id="user-info">
-      <p class="user-name">Hello, {{ session['user_name'] }}</p>
+      <p class="user-name">Hello, {{ user.username }}</p>
       <form action="/userprofile" method="post" class="city-state-form">
         <p>Enter your city and state</p>
         <div class="input-group">
@@ -63,5 +63,9 @@
 
 
 {% block footer %}
-
+<footer class="footer">
+  <div class="center-content">
+    <h2>Footer Content</h2>
+  </div>
+</footer>
 {% endblock %}

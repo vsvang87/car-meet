@@ -16,7 +16,7 @@
   <div class="navbar-container">
 <a href="/" class="navbar-logo">Car Meet <i class="fa-solid fa-car"></i></a>
   <ul class="navlinks">
-    <li><a href="/post_content" class="text-black">Post</a></li>
+    <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
     <li><a href="/userprofile" class="text-black">Profile</a></li>
     <li><a href="/" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
@@ -32,7 +32,7 @@
   <div class="center-content">
     <div class="find-meet">
       <h1 class="title">Find Local Car Meet</h1>
-      <a href="/post_content" class="host-meet-button">Post Content</a>
+      <a href="/create_meet_up_form" class="host-meet-button">Create Meet-up</a>
     </div>
 
     <div class="state-city-container">
@@ -52,11 +52,13 @@
   <div class="center-content">
     <div class="search-content">
       {% if meetups %}
-      {{ meetups }}
+        <p>These are the meet up in your location.</p>
+        {% for meetup in meetups %}
+            {{ meetups }}
+        {% endfor %}
+        
       {% endif %}
-      <h1>Search content goes here</h1>
-
-      
+  
     </div>
   </div>
 </section>

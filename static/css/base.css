@@ -37,4 +37,9 @@ body {
   min-height: 20vh;
   padding: 1rem 0;
   background: #353535;
+  color: #fff;
+}
+.center-content {
+  width: min(80%, 90rem);
+  margin-inline: auto;
 }

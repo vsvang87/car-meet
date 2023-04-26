@@ -1,0 +1,50 @@
+
+.create-meet-section {
+  min-height: 70vh;
+  padding: 1rem 0;
+
+}
+.meet-up-container {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.meet-col {
+  width: 50%;
+}
+.inner-content {
+  padding-left: 1.5rem;
+}
+form {
+  min-height: 50vh;
+  width: 100%;
+}
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 0.7rem;
+  width: 90%;
+}
+.form-group input {
+  font-size: 1.2rem;
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 0.7rem 0.5rem;
+}
+.form-group .submit-button {
+  background: lightcoral;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 0.5rem;
+  cursor: pointer;
+}
