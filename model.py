@@ -43,7 +43,7 @@ class Meetup(db.Model):
     user = db.relationship("User", back_populates="meet_ups")
 
     def __repr__(self):
-        return f"<Meetup city={self.city} meet_up_id={self.meet_up_id}>"
+        return f"<Meetup city={self.city} state={self.state}>"
     
 
 class Post(db.Model):

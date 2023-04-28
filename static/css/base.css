@@ -3,7 +3,7 @@
   --fs-subtitle: 2rem;
 
   --clr-blue: #5585b5;
-  --clr-lightGray: #d9dad7;
+  --clr-lightGray: #e0e0e0;
   --clr-darkGray: #3e4a61;
 }
 
@@ -36,7 +36,7 @@ body {
 .footer {
   min-height: 20vh;
   padding: 1rem 0;
-  background: #353535;
+  background: var(--clr-lightGray);
   color: #fff;
 }
 .center-content {

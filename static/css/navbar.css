@@ -14,7 +14,7 @@ nav {
 .navbar-logo {
   text-decoration: none;
   color: #353535;
-  font-weight: bold;
+  font-family: 'Pacifico', cursive;
 }
 .navlinks {
   display: flex;

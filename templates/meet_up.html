@@ -14,7 +14,7 @@
 {% block body %}
 <nav>
   <div class="navbar-container">
-<a href="/" class="navbar-logo">Car Meet <i class="fa-solid fa-car"></i></a>
+<a href="/meet_up" class="navbar-logo">Car Meet <i class="fa-solid fa-car"></i></a>
   <ul class="navlinks">
     <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
     <li><a href="/userprofile" class="text-black">Profile</a></li>
@@ -31,8 +31,8 @@
 <section class="find-meet-container">
   <div class="center-content">
     <div class="find-meet">
-      <h1 class="title">Find Local Car Meet</h1>
-      <a href="/create_meet_up_form" class="host-meet-button">Create Meet-up</a>
+      <h1 class="title">Find Local Car Meet or Create Your Own Meet Up</h1>
+      <a href="/create_meet_up_form" class="host-meet-button">Create Meet</a>
     </div>
 
     <div class="state-city-container">
@@ -50,15 +50,14 @@
 
 <section class="search-container">
   <div class="center-content">
-    <div class="search-content">
-      {% if meetups %}
-        <p>These are the meet up in your location.</p>
+    <div class="search-content" id="search-content">
+        <h4>Meet up in your location.</h4>
         {% for meetup in meetups %}
-            {{ meetups }}
+        <p>Date Time: {{ meetup.date_time }}</p>
+        <p>City: {{ meetup.city }}</p>
+        <p>State: {{ meetup.state }}</p>
+        <p>Zipcode: {{ meetup.zipcode }}</p>
         {% endfor %}
-        
-      {% endif %}
-  
     </div>
   </div>
 </section>

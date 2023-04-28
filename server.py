@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, session, redirect, url_for
+from flask import Flask, render_template, request, flash, session, redirect, url_for, jsonify
 from model import connect_to_db, db, User, Post, Meetup
 import crud
 
@@ -137,6 +137,7 @@ def meet_up():
 
     return render_template("meet_up.html", meetups=meetups)
 
+
 #-------------------------Create Meet Up Form-------------------#
 @app.route("/create_meet_up_form")
 def create_meet_up_form():
@@ -175,12 +176,6 @@ def logout():
     session.clear()
 
     return redirect("/")
-
-#--------------------------Host Event-----------------------#
-@app.route("/host-event")
-def host_event():
-
-    return render_template("host_event.html")
 
 
 #-----------------------------------------------------------#

@@ -49,7 +49,8 @@ def meet_up(date_time, city, state, zipcode, user_id):
 
     return meetup
 
-
+    
+#------------------------------------------------------------------------#
 def create_city_and_state(city, state, user):
 
     user.city = city
@@ -58,9 +59,6 @@ def create_city_and_state(city, state, user):
     return user
 
    
-
-
-
 #-----------------Update user image---------------------------------#
 def update_img_url(image_url, user):
 
