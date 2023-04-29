@@ -15,7 +15,7 @@ body {
 .container::after {
   content: '';
   position: absolute;
-  background-image: url('../image/supra-skyline.jpg');
+  background-image: url('../image/supra-skyline2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

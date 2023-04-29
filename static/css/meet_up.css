@@ -91,11 +91,11 @@ section .bg-img-container{
 
 /*-------------------------Search Content-------------------------*/
 .search-container {
-  min-height: 40vh;
+  min-height: 50vh;
   padding: 2rem 0;
-  background: rgb(235, 235, 235);
+  background: rgb(240, 240, 240);
 }
 
 #map {
-  height: 40vh;
+  height: 50vh;
 }

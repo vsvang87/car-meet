@@ -11,29 +11,34 @@
 {% endblock %}
 
 {% block body %}
+
+
+<section class="home-page">
 <nav>
   <div class="navbar-container">
 <a href="#" class="navbar-logo">Car Meet <i class="fa-solid fa-car"></i></a>
   <ul class="navlinks">
     <li><a href="/" class="text-black">News</a></li>
-    <li><a href="/login" class="login-button">Login</a></li>
     <li><a href="/create_user" class="login-button">Sign Up</a></li>
   </ul>
   </div>
 </nav>
 
-<section class="home-page">
-  <div class="base-container">
-    <h1 class="intro-message">
-      Meet and greet in your location. Meet other drivers and show off your ride.
-    </h1>
+
+  <div class="intro-container">
+    <div class="intro-content">
+      <h1>
+        Meet and greet in your location. Meet other drivers and show off your ride.
+      </h1>
+      <a href="/login" class="login-button">Login</a>
+    </div>
   </div>
 </section>
 
 <section class="news-container">
   <div class="base-container">
-    <h1>Latest News</h1>
-    
+    <h1>Gallery</h1>
+    <p>Everyday driver</p>
   </div>
 </section>
 
