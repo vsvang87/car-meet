@@ -41,7 +41,28 @@ section .bg-img-container{
   color: #fff;
 }
 .state-city-container {
-  padding: 2rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem 0 0 0;
+  gap: 2rem;
+}
+.state-city-container .search-content h3 {
+  margin-top: 0;
+}
+/*---------------------Search Form----------------------------*/
+.form-search form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.form-search form input {
+  margin-bottom: 1rem;
+  width: 60%;
+}
+.form-col {
+  width: 50%;
 }
 
 .state-selection {
@@ -75,3 +96,6 @@ section .bg-img-container{
   background: rgb(235, 235, 235);
 }
 
+#map {
+  height: 40vh;
+}

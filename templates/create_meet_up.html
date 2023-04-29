@@ -31,21 +31,29 @@
    <div class="meet-form meet-col">
        <form action="/create_meet_up_form" method="POST">
        <h1>Host your own meet up</h1>
+       <div class="form-group">
+        <label for="text">Title</label>
+      <input type="text" name="title" id="title" required/>
+      </div>
       <div class="form-group">
         <label for="datetime">Date Time</label>
-      <input type="datetime-local" name="datetime" id="datetime"/>
+      <input type="datetime-local" name="datetime" id="datetime" required/>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="address" name="address" id="address" required/>
       </div>
       <div class="form-group">
         <label for="city">City</label>
-        <input type="text" name="city" id="city">
+        <input type="text" name="city" id="city" required>
       </div>
       <div class="form-group">
         <label for="state">State</label>
-        <input type="text" name="state" id="state">
+        <input type="text" name="state" id="state" required>
       </div>
       <div class="form-group">
         <label for="zipcode">Zipcode</label>
-        <input type="text" name="zipcode" id="zipcode">
+        <input type="text" name="zipcode" id="zipcode" required>
       </div>
       <div class="form-group">
         <button type="submit" class="submit-button">Submit</button>

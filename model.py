@@ -18,7 +18,6 @@ class User(db.Model):
     last_name = db.Column(db.String(50), nullable=False)
     city = db.Column(db.String(50), nullable=True)
     state = db.Column(db.String(50), nullable=True)
-    zipcode = db.Column(db.Integer, nullable=True)
     image_url = db.Column(db.String, nullable=True)
 
     meet_ups = db.relationship("Meetup", back_populates="user")
@@ -34,7 +33,9 @@ class Meetup(db.Model):
     __tablename__ = 'meets'
 
     meet_up_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(50), nullable=True)
     date_time = db.Column(db.DateTime, nullable=True)
+    address = db.Column(db.String(50), nullable=True)
     city = db.Column(db.String(50), nullable=True)
     state = db.Column(db.String(50), nullable=True)
     zipcode = db.Column(db.Integer, nullable=True)
@@ -48,8 +49,6 @@ class Meetup(db.Model):
 
 class Post(db.Model):
     
-
-
     __tablename__ = 'posts'
 
     post_id = db.Column(db.Integer, primary_key=True, autoincrement=True)

@@ -24,32 +24,25 @@ def home():
 @app.route("/login")
 def login():
 
-    # email = request.args.get("email")
-    # password = request.args.get("password")
-
-    # user = crud.get_user_by_email(email)
-    # if not user or user.password != password:
-    #     flash("Incorrect email or password")
-
     return render_template("login.html")
 
 
 @app.route("/login", methods=["POST"])
 def login_user():
     
-    username = request.form.get('user_name')
+    # username = request.form.get('user_name')
     email = request.form.get('email')
     password = request.form.get('password')
 
     user = crud.get_user_by_email(email)
 
     if not user or user.password != password:
-        flash("Incorrect email or password")
+        flash("Incorrect username, email or password")
         return redirect("/login")
     else:
         session['user_email'] = user.email
         session['user_id'] = user.user_id
-        flash(f"Welcome {user.email}")
+        # flash(f"Welcome {user.email}")
         return redirect("/userprofile")
     
 
@@ -73,6 +66,7 @@ def create_new_users():
     user = crud.get_user_by_password(password)
     if user:
         flash("That email already existed")
+        return redirect("/create_user")
     else:
         user = crud.create_user(first_name, last_name, username, email, password)
         db.session.add(user)
@@ -149,14 +143,16 @@ def create_meet_up_form():
 @app.route("/create_meet_up_form", methods=["POST"])
 def meetup():
     #data from create_meet_up.html form
+    title = request.form.get("title")
     datetime = request.form.get("datetime")
+    address = request.form.get("address")
     city = request.form.get("city")
     state = request.form.get("state")
     zipcode = request.form.get("zipcode")
 
     user_id = session['user_id']
     #this data need to comes from the form in the create_meet-up.html
-    meets = crud.meet_up(datetime, city, state, zipcode, user_id)
+    meets = crud.meet_up(title, datetime, address, city, state, zipcode, user_id)
     db.session.add(meets)
     db.session.commit()
     

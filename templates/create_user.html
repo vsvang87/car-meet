@@ -27,8 +27,14 @@
 <div class="container">
 
   <div class="form-container">
-
     <h1 class="login-title">Create New User</h1>
+
+    <div class="flashed-msg">
+      {% for message in get_flashed_messages() %}
+      <p>{{ messsage }}</p>
+    {% endfor %}
+    </div>
+
 <form action="#" method="POST" class="form">
   <div class="form-group">
     <label for="first-name">First Name:</label>

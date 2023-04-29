@@ -19,6 +19,7 @@
     <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
   </ul>
    <div class="logout-div">
+    <a href="#" class="dropdown">Setting <i class="fa-solid fa-gear"></i></a>
     <a href="/" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a>
    </div>
   </div>
@@ -38,7 +39,12 @@
 
     </div>
 
+    
+
     <div class="p-info p-col" id="user-info">
+
+     
+
       <p class="user-name">Hello, {{ user.username }}</p>
       <form action="/userprofile" method="post" class="city-state-form">
         <p>Enter your city and state</p>
@@ -53,7 +59,7 @@
         </div>
       </form>
     </div>
-
+       
   </div>
 </div>
 </section>

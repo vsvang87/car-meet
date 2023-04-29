@@ -43,9 +43,9 @@ def create_post(datetime, post_content, user_id):
     return post
 
 #------------------Meet up Page-----------------------------------------#
-def meet_up(date_time, city, state, zipcode, user_id):
+def meet_up(title, date_time, address, city, state, zipcode, user_id):
 
-    meetup = Meetup(date_time=date_time, city=city, state=state, zipcode=zipcode, user_id=user_id)
+    meetup = Meetup(title=title, date_time=date_time, address=address, city=city, state=state, zipcode=zipcode, user_id=user_id)
 
     return meetup
 
