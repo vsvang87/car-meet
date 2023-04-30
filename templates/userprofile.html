@@ -14,14 +14,13 @@
 {% block body %}
 <nav>
   <div class="navbar-container">
+    <a href="/meet_up" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
     <ul class="navlinks">
-    <li><a href="/meet_up" class="text-black">Search</a></li>
+    <li><a href="/meet_up" class="text-black">Search Meet</a></li>
     <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
+    <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
-   <div class="logout-div">
-    <a href="#" class="dropdown">Setting <i class="fa-solid fa-gear"></i></a>
-    <a href="/" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a>
-   </div>
+   
   </div>
 </nav>
 
@@ -36,32 +35,24 @@
         <input type="file" name="my-file" class="upload-button"/>
         <input type="submit" value="submit" class="upload-button"/>
       </form>
-
     </div>
 
-    
-
-    <div class="p-info p-col" id="user-info">
-
-     
-
-      <p class="user-name">Hi, {{ user.username }}</p>
-      <form action="/userprofile" method="post" class="city-state-form">
-        <p>Enter your city and state</p>
-        <div class="input-group">
-          <input type="text" name="city" placeholder="City"/>
-        </div>
-        <div class="input-group">
-          <input type="text" name="state" placeholder="State"/>
-        </div>
-        <div class="input-group">
-          <button type="submit" class="save-button">save</button>
-        </div>
-      </form>
+    <div class="p-info p-col">
+      <h1 class="user-name">Hi, {{ user.username }}</h1>
+      <h3> {{ user.city }}, {{ user.state }}</h3>
+      <div class="edit-profile">
+        <a href="/profile_update" class="edit-button">Edit Profile</a>
+      </div>
     </div>
        
   </div>
 </div>
+</section>
+
+<section class="delete-post-container">
+  <div class="p-center-container">
+    <h1>Post Even Appears here</h1>
+  </div>
 </section>
 
 <script src="/static/js/userprofile.js"></script>

@@ -62,6 +62,16 @@ body {
   width: 100%;
   margin: 0.7rem 0;
 }
+.login-button {
+  border: 1px solid lightcoral;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: lightcoral;
+  color: lightcoral;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
 .create-link {
   /* text-decoration: none; */
   color: black;

@@ -1,0 +1,58 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+   font-family: 'Quicksand', sans-serif;
+}
+
+/*-----------------Navbar--------------------------*/
+nav {
+  font-size: 1rem;
+}
+
+.navbar-container {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-logo {
+  text-decoration: none;
+  color: #353535;
+  font-family: 'Pacifico', cursive;
+}
+.navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navlinks li {
+  list-style: none;
+  padding: 1rem;
+}
+.navlinks li a {
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.5rem 0.7rem;
+  transition: 0.15s ease-in-out;
+}
+.navlinks li a:hover {
+  border: 1px solid lightcoral;
+  color: lightcoral;
+}
+.text-black {
+  color:black;
+}
+
+
+
+.edit-profile-container {
+  min-height: 100vh;
+}
+.e-container {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+}

@@ -1,6 +1,6 @@
 
 nav {
-  font-size: 1.1rem;
+  font-size: 1rem;
   /* box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2); */
 }
 
@@ -26,23 +26,22 @@ nav {
   padding: 1rem;
 }
 .navlinks li a {
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
   text-decoration: none;
+  padding: 0.5rem 0.7rem;
   transition: 0.15s ease-in-out;
 }
-.text-black {
-  color:#353535;
-}
-.text-black:hover {
-  border-bottom: 1px solid #353535;
-}
-
-.login-button {
+.navlinks li a:hover {
   border: 1px solid lightcoral;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
   color: lightcoral;
 }
-.login-button:hover {
-  background: lightcoral;
+.text-black {
+  color:black;
+}
+.login-button {
   color: #fff;
 }
+
+

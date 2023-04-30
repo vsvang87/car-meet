@@ -15,11 +15,11 @@
 {% block body %}
 <nav>
   <div class="navbar-container">
-<a href="/meet_up" class="navbar-logo">Car Meet <i class="fa-solid fa-car"></i></a>
+<a href="/meet_up" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
   <ul class="navlinks">
     <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
     <li><a href="/userprofile" class="text-black">Profile</a></li>
-    <li><a href="/" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
+    <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
   </div>
 </nav>
@@ -36,8 +36,12 @@
       <a href="/create_meet_up_form" class="host-meet-button">Create Meet</a>
     </div>
 
+
+    <p>Don't miss out on car show and events around you. Use the city and state to find meets in your area.</p>
     <div class="state-city-container">
+      
      <div class="form-search form-col">
+      
        <form action="/meet_up" method="GET">
          <input type="city" name="city" id="city" class="state-selection" placeholder="Enter City..."/>
         <input type="text" name="state" id="state" class="state-selection" placeholder="Enter State..."/>
@@ -47,7 +51,7 @@
       <div class="search-content form-col" id="search-content">
         {% for meetup in meetups %}
         <h3>{{ meetup.title }}</h3>
-        <h4>{{ meetup.date_time }}</h4>
+        <p>{{ meetup.date_time }}</p>
         <p>{{ meetup.address }}</p>
         <p>{{ meetup.city }}, {{ meetup.state }} {{ meetup.zipcode }}</p>
         {% endfor %}

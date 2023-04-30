@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, session, redirect, url_for, jsonify
-from model import connect_to_db, db, User, Post, Meetup
+from model import connect_to_db, db, User, Meetup
 import crud
 
 import cloudinary.uploader
@@ -60,6 +60,8 @@ def create_new_users():
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     username = request.form.get('username')
+    city = request.form.get('city')
+    state = request.form.get('state')
     email = request.form.get('email')
     password = request.form.get('password')
 
@@ -68,7 +70,7 @@ def create_new_users():
         flash("That email already existed")
         return redirect("/create_user")
     else:
-        user = crud.create_user(first_name, last_name, username, email, password)
+        user = crud.create_user(first_name, last_name, username, city , state, email, password)
         db.session.add(user)
         db.session.commit()
         session['user_email'] = user.email
@@ -110,8 +112,8 @@ def userprofile_username():
 def add_city_and_state():
 
     #getting city and state from form
-    city = request.form.get("city")
-    state = request.form.get("state")
+    # city = request.form.get("city")
+    # state = request.form.get("state")
 
     email = session['user_email']
     user = crud.get_user_by_email(email)
@@ -135,14 +137,14 @@ def meet_up():
 #-------------------------Create Meet Up Form-------------------#
 @app.route("/create_meet_up_form")
 def create_meet_up_form():
-    #this route is to display the form
+   
     return render_template("create_meet_up.html")
 
 
 
 @app.route("/create_meet_up_form", methods=["POST"])
 def meetup():
-    #data from create_meet_up.html form
+  
     title = request.form.get("title")
     datetime = request.form.get("datetime")
     address = request.form.get("address")
@@ -151,20 +153,51 @@ def meetup():
     zipcode = request.form.get("zipcode")
 
     user_id = session['user_id']
-    #this data need to comes from the form in the create_meet-up.html
+    
     meets = crud.meet_up(title, datetime, address, city, state, zipcode, user_id)
     db.session.add(meets)
     db.session.commit()
     
     return redirect("/userprofile")
 
-#------------------------Post Content-------------------------#
-@app.route("/post_content")
-def post_content():
+#------------------------Edit User Profile-------------------------#
+@app.route("/profile_update")
+def profile_update():
 
-    return render_template("post_content.html")
+    email = session['user_email']
+    user = crud.get_user_by_email(email)
+    
+    return render_template("profile_update.html", user=user)
 
 
+
+@app.route("/profile_update", methods=["POST"])
+def user_profile_update():
+
+    username = request.form.get("username")
+    first_name = request.form.get("firstname")
+    last_name = request.form.get("lastname")
+    city = request.form.get("city")
+    state = request.form.get("state")
+
+    email = session['user_email']
+    user = crud.get_user_by_email(email)
+
+    if user.username:
+        user.username = username
+    elif user.first_name:
+        user.first_name = first_name
+    elif user.last_name:
+        user.last_name = last_name
+    elif user.city:
+        user.city = city
+    elif user.state:
+        user.state = state
+    
+
+    db.session.commit()
+
+    return redirect("/userprofile")
 #------------------------Log Out-----------------------------#
 @app.route("/logout")
 def logout():

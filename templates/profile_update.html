@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %} Update Profile {% endblock %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/static/css/profile_update.css"/>
+{% endblock %}
+{% block body %}
+<nav>
+  <div class="navbar-container">
+    <a href="/meet_up" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
+    <ul class="navlinks">
+    <li><a href="/meet_up" class="text-black">Search Meet</a></li>
+    <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
+    <li><a href="/userprofile" class="text-black">Profile</a></li>
+    <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
+  </ul>
+  </div>
+</nav>
+
+<section class="edit-profile-container">
+  <div class="e-container">
+    <h1>{{ user.username }}</h1>
+    <form action="/profile_update" method="POST">
+      <div class="e-group-form">
+        <label for="username">Username</label>
+      <input type="text" name="username" id="username"/>
+      </div>
+      <div class="e-group-form">
+        <label for="firstname">First Name</label>
+      <input type="text" name="firstname" id="firstname"/>
+      </div>
+      <div class="e-group-form">
+        <label for="lastname">Last Name</label>
+      <input type="text" name="lastname" id="lastname"/>
+      </div>
+      <div class="e-group-form">
+        <label for="city">City</label>
+      <input type="text" name="city" id="city"/>
+      </div>
+      <div class="e-group-form">
+        <label for="state">State</label>
+      <input type="text" name="state" id="state"/>
+      </div>
+      <div class="e-group-form">
+        <button type="submit" class="update-button">Update</button>
+        <a href="/userprofile" class="update-button">Cancel</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

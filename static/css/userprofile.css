@@ -1,10 +1,9 @@
 
 nav{
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 nav .navlinks {
   padding: 0;
@@ -22,16 +21,12 @@ nav .navlinks li a {
   text-decoration: none;
 }
 
-.logout-div a {
-  text-decoration: none;
-}
-
 /*-----------------------------Section-----------------------------*/
 section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  min-height: 60vh;
   padding: 2rem 0;
 }
 .p-container {
@@ -95,3 +90,8 @@ section {
   font-size: 1.2rem;
   cursor: pointer;
 }
+ /*--------------------------Post Meet up---------------------*/
+ .delete-post-container {
+  background-color: lightcyan;
+  min-height: 50vh;
+ }

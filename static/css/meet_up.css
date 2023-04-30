@@ -44,8 +44,15 @@ section .bg-img-container{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 2rem 0 0 0;
-  gap: 2rem;
+  padding: 1rem 0;
+  
+}
+.state-city-container .form-search {
+  border-right: 1px solid lightgray;
+}
+.state-city-container .search-content {
+  text-align: center;
+  
 }
 .state-city-container .search-content h3 {
   margin-top: 0;

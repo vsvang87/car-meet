@@ -1,10 +1,10 @@
-from model import db, User, Post, Meetup, connect_to_db
+from model import db, User, Meetup, connect_to_db
 
 
 #-----------------create_user--------------------------------------#
-def create_user(first_name, last_name, username, email, password):
+def create_user(first_name, last_name, username, city, state, email, password):
     
-    user = User(first_name=first_name, last_name=last_name, username=username, email=email, password=password)
+    user = User(first_name=first_name, last_name=last_name, username=username, city=city, state=state, email=email, password=password)
 
     return user
 
@@ -65,3 +65,11 @@ def update_img_url(image_url, user):
     user.image_url = image_url
 
     return image_url
+
+#-------------------Update User Profile-----------------------------#
+def update_user_profile(city, state, username, user):
+    user.city = city
+    user.state = state
+    user.username = username
+
+    return user

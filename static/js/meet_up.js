@@ -9,10 +9,11 @@ const findMyState = () => {
     let cityEl = cityInput.value;
     let stateEl = stateInput.value;
 
+    // setting latitude and longitude from coords 
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+    const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
 
     fetch(geoApiUrl)
       .then((response) => response.json())
@@ -23,6 +24,7 @@ const findMyState = () => {
         // status.textContent = data.principalSubdivision;
     })
   }
+  // error message if fail to retrieve data
   const error = () => {
     console.log("Error, unable to retrieve data")
   }
