@@ -83,10 +83,13 @@ def create_new_users():
 @app.route("/userprofile")
 def user_profile():
 
+    
     email = session['user_email']
     user = crud.get_user_by_email(email)
     print(email) 
     print(user)
+
+   
     return render_template("userprofile.html", user=user)
 
 
@@ -131,7 +134,7 @@ def meet_up():
 
     meetups = Meetup.query.filter(Meetup.state == state, Meetup.city == city).all()
 
-    return render_template("meet_up.html", meetups=meetups)
+    return render_template("meet_up.html", meetups=meetups, city=city, state=state)
 
 
 #-------------------------Create Meet Up Form-------------------#
@@ -160,6 +163,8 @@ def meetup():
     
     return redirect("/userprofile")
 
+ 
+
 #------------------------Edit User Profile-------------------------#
 @app.route("/profile_update")
 def profile_update():
@@ -180,21 +185,26 @@ def user_profile_update():
     city = request.form.get("city")
     state = request.form.get("state")
 
-    email = session['user_email']
-    user = crud.get_user_by_email(email)
+    user_id = session['user_id']
+    user = crud.get_user_by_id(user_id)
 
-    if user.username:
+
+    if username:
         user.username = username
-    elif user.first_name:
+      
+    if first_name:
         user.first_name = first_name
-    elif user.last_name:
+      
+    if last_name:
         user.last_name = last_name
-    elif user.city:
+       
+    if city:
         user.city = city
-    elif user.state:
+        
+    if state:
         user.state = state
+       
     
-
     db.session.commit()
 
     return redirect("/userprofile")
@@ -205,7 +215,6 @@ def logout():
     session.clear()
 
     return redirect("/")
-
 
 #-----------------------------------------------------------#
 

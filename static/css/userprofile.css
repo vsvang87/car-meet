@@ -22,12 +22,13 @@ nav .navlinks li a {
 }
 
 /*-----------------------------Section-----------------------------*/
-section {
+.user-profile {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
+  min-height: 50vh;
   padding: 2rem 0;
+  background-color: rgb(240, 240, 240);
 }
 .p-container {
   width: min(80%, 90rem);
@@ -42,9 +43,16 @@ section {
 .p-col {
   width: 50%;
 }
+.p-info {
+  min-height: 400px;
+}
+.p-info p {
+  padding: 0.5rem 0;
+}
 .p-center-container .p-image img {
-  width: 100%;
-  height: fit-content;
+  width: 70%;
+  object-fit: cover;
+  min-height: 350px;
 }
 .user-name {
   font-size: 1.5rem;
@@ -53,7 +61,7 @@ section {
 }
 /*----------------------Cloudinary------------------------------*/
 .cloudinary-form .upload-button{
-  padding: 0.3rem;
+  padding: 0 .7rem;
   border: 1px solid lightgray;
   cursor: pointer;
   border-radius: 3px;
@@ -69,29 +77,20 @@ section {
   width: 100%;
   font-size: 1.2rem;
 }
-.input-group {
-  margin-bottom: 0.7rem;
-  width: 100%;
-}
-.input-group input {
-  font-size: 1.2rem;
-  width: 50%;
-  outline: none;
-  border: 1px solid lightgray;
-  padding: 0.7rem 0.5rem;
-  border-radius: 5px;
-}
-.input-group .save-button {
-  border: none;
-  border-radius: 5px;
+.edit-button {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
   background: lightcoral;
   color: #fff;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  cursor: pointer;
+  border-radius: 5px;
 }
  /*--------------------------Post Meet up---------------------*/
  .delete-post-container {
-  background-color: lightcyan;
+  min-height: 50vh;
+ }
+ .p-post-content {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+  border-bottom: 1px solid lightgray;
   min-height: 50vh;
  }

@@ -23,8 +23,13 @@
 
 <section class="edit-profile-container">
   <div class="e-container">
-    <h1>{{ user.username }}</h1>
-    <form action="/profile_update" method="POST">
+    <div class="info-content update-col">
+      <h1>More info goes here</h1>
+    </div>
+
+    <div class="form-container update-col">
+      <form action="/profile_update" method="POST">
+      <h1>{{ user.username }}</h1>
       <div class="e-group-form">
         <label for="username">Username</label>
       <input type="text" name="username" id="username"/>
@@ -46,10 +51,13 @@
       <input type="text" name="state" id="state"/>
       </div>
       <div class="e-group-form">
-        <button type="submit" class="update-button">Update</button>
-        <a href="/userprofile" class="update-button">Cancel</a>
+        <button type="submit" class="update-button update">Update</button>
+        <a href="/userprofile" class="update-button cancel">Cancel</a>
       </div>
     </form>
+
+    </div>
+    
   </div>
 </section>
 

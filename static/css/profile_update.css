@@ -1,8 +1,12 @@
+* {
+font-family: 'Quicksand', sans-serif;
+}
 html {
   scroll-behavior: smooth;
 }
 body {
-   font-family: 'Quicksand', sans-serif;
+   padding: 0;
+   margin: 0;
 }
 
 /*-----------------Navbar--------------------------*/
@@ -47,12 +51,56 @@ nav {
   color:black;
 }
 
-
+/*----------------------------Form container---------------------*/
 
 .edit-profile-container {
-  min-height: 100vh;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
 }
 .e-container {
   width: min(80%, 90rem);
   margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.update-col {
+  width: 50%;
+}
+form {
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+width: 100%;
+}
+form .e-group-form {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+form .e-group-form input {
+  outline: none;
+  border: 1px solid lightgray;
+  width: 93%;
+  padding: 0.7rem 0.2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+.cancel {
+  text-decoration: none;
+}
+.update {
+  border: none;
+  cursor: pointer;
+}
+.update-button {
+  border-radius: 5px;
+  background: lightcoral;
+  font-size: 1rem;
+  color: #fff;
+  padding: 0.7rem 1rem;
 }

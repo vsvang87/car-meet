@@ -36,11 +36,11 @@ def get_user_by_password(password):
     return User.query.filter(User.password == password).first()
 
 #----------------create post--------------------------------------#
-def create_post(datetime, post_content, user_id):
+# def create_post(datetime, post_content, user_id):
 
-    post = Post(datetime=datetime, post_content=post_content, user_id=user_id)
+#     post = Post(datetime=datetime, post_content=post_content, user_id=user_id)
     
-    return post
+#     return post
 
 #------------------Meet up Page-----------------------------------------#
 def meet_up(title, date_time, address, city, state, zipcode, user_id):
@@ -49,7 +49,11 @@ def meet_up(title, date_time, address, city, state, zipcode, user_id):
 
     return meetup
 
-    
+
+def get_post_content(title):
+
+    return Meetup.query.filter(Meetup.title == title).all()
+
 #------------------------------------------------------------------------#
 def create_city_and_state(city, state, user):
 
@@ -67,9 +71,9 @@ def update_img_url(image_url, user):
     return image_url
 
 #-------------------Update User Profile-----------------------------#
-def update_user_profile(city, state, username, user):
-    user.city = city
-    user.state = state
-    user.username = username
+# def update_user_profile(city, state, username, user):
+#     user.city = city
+#     user.state = state
+#     user.username = username
 
-    return user
+#     return user
