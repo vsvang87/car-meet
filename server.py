@@ -79,7 +79,7 @@ def create_new_users():
     return redirect("/userprofile")
         
 
-#-------------------------user profile--------------------------#
+#-------------------------user profile, events--------------------------#
 @app.route("/userprofile")
 def user_profile():
 
@@ -89,9 +89,9 @@ def user_profile():
 
     
     user_id = session["user_id"]
-    posts = crud.get_events(user_id)
+    events = crud.get_events(user_id)
     
-    return render_template("userprofile.html", user=user, posts=posts)
+    return render_template("userprofile.html", user=user, events=events)
 
 
 @app.route("/post-form-data", methods=["POST"])
@@ -111,7 +111,8 @@ def userprofile_username():
 
     return redirect("/userprofile")
    
-    
+
+
 #---------------------------search meet up-----------------------------#
 @app.route("/meet_up")
 def meet_up():
@@ -143,15 +144,61 @@ def meetup():
     zipcode = request.form.get("zipcode")
 
     user_id = session['user_id']
-    
-    meets = crud.meet_up(title, datetime, address, city, state, zipcode, user_id)
-    flash("post was successful")
-    db.session.add(meets)
-    db.session.commit()
+
+    if user_id is None:
+        flash("You have to logged in to create event")
+    else:
+        meets = crud.meet_up(title, datetime, address, city, state, zipcode, user_id)
+        db.session.add(meets)
+        db.session.commit()
+        flash("Post is successful")
     
     return redirect("/userprofile")
 
  
+
+@app.route("/update_event", methods=["POST"])
+def update_event():
+
+    # Getting meet up id input from form
+    meet_up_id = request.form.get("meet_up_id")  
+
+    title = request.form.get("title")
+    datetime = request.form.get("datetime")
+    address = request.form.get("address")
+    city = request.form.get("city")
+    state = request.form.get("state")
+    zipcode = request.form.get("zipcode")
+
+    user_id = session.get('user_id')
+    
+    meetup = crud.get_meet_up_by_id(meet_up_id)
+    
+    if user_id is None:
+        flash("You have to log in to update event")
+
+    if title:
+         meetup.title = title
+
+    if datetime:
+        meetup.datetime = datetime
+
+    if address:
+        meetup.address = address
+
+    if city:
+        meetup.city = city
+
+    if state:
+        meetup.state = state
+
+    if zipcode:
+        meetup.zipcode = zipcode
+  
+    db.session.commit()
+    flash("Event update successful")
+
+    return redirect("/userprofile")
 
 #------------------------Edit User Profile-------------------------#
 @app.route("/profile_update")
@@ -193,31 +240,32 @@ def user_profile_update():
        
 
     db.session.commit()
+    flash("Profile update successful")
 
     return redirect("/userprofile")
 
-
+#----------------------------Post Content Page----------------------------#
 @app.route("/post_content",methods=["GET", "POST"])
 def post_content():
 
-    date_time = request.form.get("datetime")
-    posts = request.form.get("posts")
+    # date_time = request.form.get("datetime")
+    # posts = request.form.get("posts")
 
-    user_id = session['user_id']
-    user = crud.get_user_by_id(user_id)
+    # user_id = session['user_id']
+    # user = crud.get_user_by_id(user_id)
 
-    if len(posts) < 1:
-        flash("Post cannot be empty!")
-    else:
-        new_post = Post(post_content=posts, user=user)
-        db.session.add(new_post)
-        db.session.commit()
-        flash("Post successful!")
+    # if len(posts) < 1:
+    #     flash("Post cannot be empty!")
+    # else:
+    #     new_post = Post(post_content=posts, user=user)
+    #     db.session.add(new_post)
+    #     db.session.commit()
+    #     flash("Post successful!")
 
 
     return render_template("post_content.html")
 
-#-----------------------Delete Post Content-----------------#
+#-----------------------Delete Events-----------------#
 @app.route("/delete_meetup/<meet_id>", methods=["POST"])
 def delete(meet_id):
 
@@ -239,7 +287,7 @@ def delete(meet_id):
 def logout():
 
     session.clear()
-    flash("You have been logged out successfully")
+    flash("Logged out successful")
    
     return redirect("/login")
 

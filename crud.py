@@ -57,7 +57,9 @@ def get_events(user_id):
     return Meetup.query.filter(Meetup.user_id == user_id).all()
 
 
+def get_meet_up_by_id(meet_up_id):
 
+    return Meetup.query.filter(Meetup.meet_up_id == meet_up_id).first()
 #------------------------------------------------------------------------#
 def create_city_and_state(city, state, user):
 

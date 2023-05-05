@@ -98,3 +98,19 @@ nav .navlinks li a {
   border-bottom: 1px solid lightgray;
   min-height: 50vh;
  }
+
+ /*-------------------------Modal Content---------------------*/
+ .modal {
+  border: 1px solid gray;
+  width: 350px;
+  height: 350px;
+  background: lightgreen;
+  position: fixed;
+  inset: 0;
+  margin: auto auto;
+  display: none;
+ }
+ .modal-container {
+  width: 70%;
+  margin: 0 auto;
+ }
