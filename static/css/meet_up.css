@@ -5,7 +5,9 @@ section .bg-img-container{
   background-repeat: no-repeat;
   background-size: cover;
   padding: 2rem;
-  min-height: 30vh;
+  min-height: 50vh;
+  position: relative;
+  background-attachment: fixed;
 }
 
 .find-meet-container {
@@ -13,7 +15,7 @@ section .bg-img-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 30vh;
+  min-height: 40vh;
 }
 
 .center-content {
@@ -32,7 +34,7 @@ section .bg-img-container{
   border: 1px solid lightcoral;
   text-decoration: none;
   color: lightcoral;
-  padding: 1rem 2rem;
+  padding: .8rem 1.5rem;
   border-radius: 5px;
   transition: 0.15s ease-in-out;
 }
@@ -81,9 +83,9 @@ section .bg-img-container{
   margin-right: 0.5rem;
 }
 .search-button {
-  border: none;
+  border: 1px solid transparent;
   background: lightcoral;
-  padding: 1rem 2rem;
+  padding: .8rem 1.5rem;
   color: #fff;
   font-size: 1rem;
   border-radius: 5px;
@@ -104,5 +106,5 @@ section .bg-img-container{
 }
 
 #map {
-  height: 50vh;
+  height: 60vh;
 }

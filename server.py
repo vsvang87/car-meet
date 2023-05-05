@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, flash, session, redirect, url_for, jsonify
-from model import connect_to_db, db, User, Meetup
+from model import connect_to_db, db, User, Meetup, Post
 import crud
 
 import cloudinary.uploader
@@ -42,7 +42,7 @@ def login_user():
     else:
         session['user_email'] = user.email
         session['user_id'] = user.user_id
-        # flash(f"Welcome {user.email}")
+        flash("Login Successful!")
         return redirect("/userprofile")
     
 
@@ -86,11 +86,12 @@ def user_profile():
     
     email = session['user_email']
     user = crud.get_user_by_email(email)
-    print(email) 
-    print(user)
 
-   
-    return render_template("userprofile.html", user=user)
+    
+    user_id = session["user_id"]
+    posts = crud.get_events(user_id)
+    
+    return render_template("userprofile.html", user=user, posts=posts)
 
 
 @app.route("/post-form-data", methods=["POST"])
@@ -109,22 +110,8 @@ def userprofile_username():
     db.session.commit()
 
     return redirect("/userprofile")
+   
     
-    
-@app.route("/userprofile", methods=["POST"])
-def add_city_and_state():
-
-    #getting city and state from form
-    # city = request.form.get("city")
-    # state = request.form.get("state")
-
-    email = session['user_email']
-    user = crud.get_user_by_email(email)
-    user = crud.create_city_and_state(city, state, user)
-    db.session.add(user)
-    db.session.commit()
-
-    return redirect("/userprofile")
 #---------------------------search meet up-----------------------------#
 @app.route("/meet_up")
 def meet_up():
@@ -158,6 +145,7 @@ def meetup():
     user_id = session['user_id']
     
     meets = crud.meet_up(title, datetime, address, city, state, zipcode, user_id)
+    flash("post was successful")
     db.session.add(meets)
     db.session.commit()
     
@@ -185,9 +173,8 @@ def user_profile_update():
     city = request.form.get("city")
     state = request.form.get("state")
 
-    user_id = session['user_id']
-    user = crud.get_user_by_id(user_id)
-
+    email = session['user_email']
+    user = crud.get_user_by_email(email)
 
     if username:
         user.username = username
@@ -204,17 +191,57 @@ def user_profile_update():
     if state:
         user.state = state
        
-    
+
     db.session.commit()
 
     return redirect("/userprofile")
+
+
+@app.route("/post_content",methods=["GET", "POST"])
+def post_content():
+
+    date_time = request.form.get("datetime")
+    posts = request.form.get("posts")
+
+    user_id = session['user_id']
+    user = crud.get_user_by_id(user_id)
+
+    if len(posts) < 1:
+        flash("Post cannot be empty!")
+    else:
+        new_post = Post(post_content=posts, user=user)
+        db.session.add(new_post)
+        db.session.commit()
+        flash("Post successful!")
+
+
+    return render_template("post_content.html")
+
+#-----------------------Delete Post Content-----------------#
+@app.route("/delete_meetup/<meet_id>", methods=["POST"])
+def delete(meet_id):
+
+    user = session.get("user_id")
+    if user is None:
+        flash("You must logged in to delete a post")
+    else:
+        meetup = Meetup.query.filter(Meetup.meet_up_id == meet_id).first()
+        db.session.delete(meetup)
+        db.session.commit()
+        flash("Event has been deleted")
+
+    
+    return redirect("/userprofile")
+    
+
 #------------------------Log Out-----------------------------#
 @app.route("/logout")
 def logout():
 
     session.clear()
-
-    return redirect("/")
+    flash("You have been logged out successfully")
+   
+    return redirect("/login")
 
 #-----------------------------------------------------------#
 

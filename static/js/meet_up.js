@@ -1,7 +1,6 @@
 // const searchBtn = document.getElementById("search-button");
 
 // const findMyState = () => {
-  
 //   const success = (position) => {
 //   console.log(position)
    
@@ -25,12 +24,9 @@
 // }
 // searchBtn.addEventListener("click", findMyState());
 
-
 // google maps
 function initMap() {
-  
   let options = {
-
     lat: 34.9496,
     lng: -81.9320
   }
@@ -40,12 +36,14 @@ function initMap() {
     center: options,
     zoom: 13,
   });
-   let geocoder = new google.maps.Geocoder()
+
+  let geocoder = new google.maps.Geocoder()
   const cityInput = document.getElementById("city").placeholder
   const stateInput = document.getElementById("state").placeholder
   // geocoder.geocode({ address: `${cityInput}, ${stateInput}` })
   let cityAndState = `${cityInput}, ${stateInput}`;
-   console.log(cityAndState)
+  console.log(cityAndState)
+  
    geocoder.geocode({ address: `${cityInput}, ${stateInput}` }, (results, status) => {
       if (status === 'OK') {
         // Get the coordinates of the user's location
@@ -61,7 +59,7 @@ function initMap() {
         map.setCenter(userLocation);
         map.setZoom(18);
       } else {
-        alert(`Geocode was unsuccessful for the following reason: ${status}`);
+        console.log(`Geocode was unsuccessful for the following reason: ${status}`);
       }
     });
   
@@ -70,11 +68,8 @@ function initMap() {
     map: map
   })
 
-  // geocodeLatLng(geocoder,map)
 }
 
-//  function geocodeLatLng(geocoder, map) {
-  
-// }
+
 
 

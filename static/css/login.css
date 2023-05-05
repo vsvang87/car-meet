@@ -1,5 +1,7 @@
+* {
+ font-family: 'Quicksand', sans-serif;
+}
 body {
-  font-family: 'Quicksand', sans-serif;
   padding: 0;
   margin: 0;
   height: 100vh;
@@ -12,18 +14,18 @@ body {
   justify-content: center;
   align-items: center;
 }
-.container::after {
+/* .container::after {
   content: '';
   position: absolute;
-  background-image: url('../image/supra-skyline2.jpg');
+  background-image: url('../image/toyota-86.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   inset: 0;
   z-index: -1;
-  filter: brightness(60%);
+  filter: brightness(80%);
   opacity: 0.8;
-}
+} */
 
 .form-container {
   display: flex;
@@ -72,7 +74,20 @@ body {
   text-decoration: none;
   margin-right: 0.5rem;
 }
-.create-link {
+.create-user-button {
+  border: 1px solid lightcoral;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: lightcoral;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  margin: 0.7rem 0 2rem 0;
+  width: 100%;
+  cursor: pointer;
+}
+.login-create-user-button {
   /* text-decoration: none; */
   color: black;
 }

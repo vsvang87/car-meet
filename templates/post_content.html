@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Post Content{% endblock %}
+
+{% block head %} {% endblock %}
+
+{% block body %} 
+<nav>
+  <div class="navbar-container">
+    <a href="/meet_up" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
+    <ul class="navlinks">
+    <li><a href="/meet_up" class="text-black">Search Meet</a></li>
+    <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
+    <li><a href="/userprofile">Profile</a></li>
+    <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
+  </ul>
+   
+  </div>
+</nav>
+
+
+<h1>Post Content Page</h1>
+{% for message in get_flashed_messages() %}
+<p>{{ message }}</p>
+{% endfor %}
+
+<form action="/post_content" method="POST">
+  <div class="p-form-group">
+    <label for="datetime">Date Time</label>
+    <input type="datetime" name="datetime"/>
+  </div>
+  <div class="p-form-group">
+    
+    <textarea cols="10" rows="10" name="posts" placeholder="Enter text"></textarea>
+  </div>
+  <div class="p-form-group">
+    <button type="submit">Post</button>
+  </div>
+</form>
+
+<div class="post-content-container">
+  <ul class="list-group" id="post">
+   {% for post in posts %}
+    <li>{{ post.post_content }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}
+
+{% block footer %} {% endblock %}

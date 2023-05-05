@@ -15,7 +15,7 @@
   <div class="navbar-container">
 <a href="/" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
   <ul class="navlinks">
-    <li><a href="/" class="text-black">Gallery</a></li>
+    <li><a href="/create_user" class="login-create-user-button">Create New User</a></li>
   </ul>
   </div>
 </nav>
@@ -29,9 +29,11 @@
 <h1 class="login-title">Login</h1>
 
 <div class="flash-msg">
+ 
   {% for message in get_flashed_messages()%}
-    <p id="flashed-message">{{ message }}!</p>
+    <p id="flashed-message">{{ message }}</p>
   {% endfor %}
+ 
 </div>
 
 <form action="#" method="post" class="form">

@@ -18,6 +18,7 @@
     <ul class="navlinks">
     <li><a href="/meet_up" class="text-black">Search Meet</a></li>
     <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
+    <li><a href="/post_content">Post</a></li>
     <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
    
@@ -29,8 +30,13 @@
 <div class="p-container">
   <div class="p-center-container">
     <div class="p-image p-col">
-      <img src="{{ user.image_url }}" alt=" "/>
 
+      {% for message in get_flashed_messages()%}
+        <p>{{ message }}</p>
+      {% endfor %}
+
+      <h1 class="user-name">Hi, {{ user.username }}</h1>
+      <img src="{{ user.image_url }}" alt=" "/>
       <form action="/post-form-data" method="post" enctype="multipart/form-data" class="cloudinary-form">
         <input type="file" name="my-file" />
         <input type="submit" value="submit" class="upload-button"/>
@@ -38,9 +44,8 @@
     </div>
 
     <div class="p-info p-col">
-      <h1 class="user-name">Hi, {{ user.username }}</h1>
-      <p>{{ user.first_name }} {{ user.last_name }}</p>
-      <p> {{ user.city }}, {{ user.state }}</p>
+      <h4>{{ user.first_name }} {{ user.last_name }}</h4>
+      <h4> {{ user.city }}, {{ user.state }}</h4>
       <div class="edit-profile">
         <a href="/profile_update" class="edit-button">Edit Profile</a>
       </div>
@@ -53,10 +58,20 @@
 <section class="delete-post-container">
   <div class="p-center-container">
     <div class="p-post-content">
-      <h1>Post Event Appears here</h1>
-   
+        <div class="post-inner-content">
+
+          {% if posts %}
+        {% for post in posts %}
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.address }}</p>
+          <form action="/delete_meetup/{{ post.meet_up_id }}" method="POST">
+          <input type="submit" class="delete-btn" value="Delete"/> 
+       </form>
+        {% endfor %}
+       {% endif %}
+       
+        </div>
     </div>
-    
   </div>
 </section>
 

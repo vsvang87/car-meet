@@ -1,4 +1,4 @@
-from model import db, User, Meetup, connect_to_db
+from model import db, User, Meetup, Post, connect_to_db
 
 
 #-----------------create_user--------------------------------------#
@@ -9,15 +9,10 @@ def create_user(first_name, last_name, username, city, state, email, password):
     return user
 
 #-----------------get_user----------------------------------------#
-def get_users():
+def get_users(user_id):
     
-    return User.query.all()
+    return User.query.filter(User.user_id == user_id).all()
 
-
-#-----------------get_user_by_id----------------------------------#
-def get_user_by_id(user_id):
-    
-    return User.query.get(user_id)
 
 #-----------------get user by username----------------------------#
 def get_user_by_username(username):
@@ -42,6 +37,12 @@ def get_user_by_password(password):
     
 #     return post
 
+#-----------------get_user_by_id----------------------------------#
+def get_user_by_id(user_id):
+    
+    return Meetup.query.filter(Meetup.user_id == user_id).all()
+
+
 #------------------Meet up Page-----------------------------------------#
 def meet_up(title, date_time, address, city, state, zipcode, user_id):
 
@@ -50,9 +51,12 @@ def meet_up(title, date_time, address, city, state, zipcode, user_id):
     return meetup
 
 
-def get_post_content(title):
 
-    return Meetup.query.filter(Meetup.title == title).all()
+def get_events(user_id):
+    
+    return Meetup.query.filter(Meetup.user_id == user_id).all()
+
+
 
 #------------------------------------------------------------------------#
 def create_city_and_state(city, state, user):

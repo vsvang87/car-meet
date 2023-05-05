@@ -21,7 +21,7 @@ class User(db.Model):
     image_url = db.Column(db.String, nullable=True)
 
     meet_ups = db.relationship("Meetup", back_populates="user")
-    # posts = db.relationship("Post", back_populates="user")
+    posts = db.relationship("Post", back_populates="user")
 
     def __repr__(self):
         return f"<User username={self.username} user_id={self.user_id}>"
@@ -47,19 +47,19 @@ class Meetup(db.Model):
         return f"<Meetup city={self.city} state={self.state}>"
     
 
-# class Post(db.Model):
+class Post(db.Model):
     
-#     __tablename__ = 'posts'
+    __tablename__ = 'posts'
 
-#     post_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-#     post_content = db.Column(db.String(500), nullable=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
-#     date_time = db.Column(db.DateTime, nullable=True)
+    post_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    post_content = db.Column(db.String(500), nullable=True)
+    date_time = db.Column(db.DateTime, nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
 
-#     user = db.relationship("User", back_populates="posts")
+    user = db.relationship("User", back_populates="posts")
 
-#     def __repr__(self):
-#         return f"<Post post_id={self.post_id} post_content={self.post_content}>"
+    def __repr__(self):
+        return f"<Post post_id={self.post_id} post_content={self.post_content}>"
 
 
 #------------------------------------------------------------------

@@ -1,11 +1,3 @@
-:root {
-  --fs-title: 2.5rem;
-  --fs-subtitle: 2rem;
-
-  --clr-blue: #5585b5;
-  --clr-lightGray: #e0e0e0;
-  --clr-darkGray: #3e4a61;
-}
 
 * {
   font-family: 'Quicksand', sans-serif;
@@ -31,7 +23,6 @@ body {
 .navbar-logo {
   text-decoration: none;
   color: #fff;
-  font-family: 'Pacifico', cursive;
 }
 .navlinks {
   display: flex;
@@ -69,76 +60,6 @@ body {
   color:#fff;
 }
 
-
-/*-----------------------Home Container-------------------------------*/
-.home-page {
-  padding: 1rem 0;
-  background-image: url("../image/supra3.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 87vh;
-}
-.base-container {
-  width: min(80%, 90rem);
-  margin-inline: auto;
-}
-.intro-container {
-  width: min(80%, 90rem);
-  margin-inline: auto;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 87vh;
-}
-.intro-content {
-  width: 50%;
-  color: #fff;
-}
-.intro-content h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 3.5rem;
-  margin: 0;
-}
-.intro-content p {
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-  margin: 0;
-  font-size: 1.2rem;
-}
-.intro-content .login-div {
-  margin-top: 1rem;
-}
-.intro-content .login-button {
-  border: 1px solid lightcoral;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  background: lightcoral;
-  color: #fff;
-  font-size: 1.2rem;
-  text-decoration: none;
-  margin-right: 1rem;
-}
-.intro-content .signup-button {
-  border: 1px solid lightcoral;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  background: transparent;
-  color: #fff;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: 0.15s ease-in-out;
-}
-.intro-content .signup-button:hover {
-  background: lightcoral;
-}
-
-/*----------------------------Gallery Container-------------------------*/
-.gallery-container {
-  min-height: 50vh;
-}
-
-/*------------------------------Footer Container------------------------*/
 .footer {
   min-height: 20vh;
   padding: 1rem 0;
