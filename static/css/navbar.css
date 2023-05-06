@@ -1,6 +1,6 @@
 
 nav {
-  font-size: 1rem;
+  font-size: 1.2rem;
   /* box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2); */
 }
 
@@ -14,6 +14,11 @@ nav {
 .navbar-logo {
   text-decoration: none;
   color: #353535;
+   font-size: 1.5rem;
+}
+.navbar-logo img {
+  width: 50px;
+  height: 50px;
 }
 .navlinks {
   display: flex;

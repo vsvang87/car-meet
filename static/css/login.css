@@ -11,14 +11,61 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  
+}
+nav {
+  font-size: 1.2rem;
+}
+
+.navbar-container {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.navbar-logo img {
+  width: 50px;
+  height: 50px;
+}
+.navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navlinks li {
+  list-style: none;
+  padding: 1rem;
+}
+.navlinks li a {
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.7rem;
+  transition: 0.15s ease-in-out;
+}
+.navlinks li a:hover {
+  border: 1px solid lightcoral;
+  color: lightcoral;
+}
+.center-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
-/* .container::after {
+
+.container::after {
   content: '';
   position: absolute;
-  background-image: url('../image/toyota-86.jpg');
+  background-image: url('../image/rsx.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,7 +73,7 @@ body {
   z-index: -1;
   filter: brightness(80%);
   opacity: 0.8;
-} */
+}
 
 .form-container {
   display: flex;
@@ -89,15 +136,11 @@ body {
   width: 100%;
   cursor: pointer;
 }
-.login-create-user-button {
-  /* text-decoration: none; */
+.create-link {
   color: black;
 }
-.create {
-  margin-bottom: 2rem;
-}
+
 .flash-msg {
   padding: 0;
   margin: 0;
-  color: red;
 }

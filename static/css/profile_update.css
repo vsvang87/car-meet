@@ -1,5 +1,4 @@
 * {
-/* font-family: 'Quicksand', sans-serif; */
  font-family: 'Roboto', sans-serif;
 }
 html {
@@ -12,7 +11,7 @@ body {
 
 /*-----------------Navbar--------------------------*/
 nav {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .navbar-container {
@@ -25,6 +24,7 @@ nav {
 .navbar-logo {
   text-decoration: none;
   color: #353535;
+  font-size: 1.5rem;
 }
 .navlinks {
   display: flex;

@@ -1,37 +1,38 @@
-/* html {
+html {
   height: 100vh;
   overflow: hidden; 
 }
 body {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  height: 100%;
   margin: 0;
   perspective: 1px;
   transform-style: preserve-3d;
   overflow-x: hidden;
   overflow-y: scroll;
-} */
+}
 /*-----------------------Home Container-------------------------------*/
-.home-page {
+.home-page, .gallery-container {
   padding: 1rem 0;
   width: 100%;
-  position: relative;
-  background: lightgray; 
+  position: relative; 
   min-height: 100vh;
   transform-style: preserve-3d;
 }
-/* .home-page::before {
+.home-page::after {
   content: '';
-  width: 100%;
-  height: 100%;
   position: absolute;
-  background-image: url("../image/white-nsx.jpg");
+  inset: 0;
+  display: block;
+  background-image: url(../image/white-nsx.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transform: translateZ(-1px) scale(2.2);
-  
-} */
+  filter: brightness(80%);
+  z-index: -1;
+  transform-origin: center center 0;
+  transform: translateZ(-1px) scale(2);
+}
 
 .base-container {
   width: min(80%, 90rem);
@@ -50,9 +51,12 @@ body {
   color: #fff;
 }
 .intro-content h1 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin: 0;
+  
+}
+.intro-content span {
+  color: lightcoral;
 }
 .intro-content p {
   padding: 1rem 0;
@@ -89,7 +93,7 @@ body {
 
 /*----------------------------Gallery Container-------------------------*/
 .gallery-container {
-  min-height: 100vh;
+  min-height: 50vh;
 }
 
 /*------------------------------Footer Container------------------------*/

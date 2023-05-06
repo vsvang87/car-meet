@@ -28,7 +28,7 @@ nav .navlinks li a {
   align-items: center;
   min-height: 50vh;
   padding: 2rem 0;
-  background-color: rgb(240, 240, 240);
+
 }
 .p-container {
   width: min(80%, 90rem);
@@ -87,15 +87,59 @@ nav .navlinks li a {
 }
  /*--------------------------Post Meet up---------------------*/
  .delete-post-container {
-  min-height: 50vh;
+  min-height: 40vh;
+  padding: 2rem 0;
+  background-color: rgb(240, 240, 240);
  }
- .p-post-content {
+ .post-center-container {
   width: min(80%, 90rem);
   margin-inline: auto;
-  border-bottom: 1px solid lightgray;
-  min-height: 50vh;
  }
-
+ .p-post-content {
+  padding: 1rem 0;
+  /* border-bottom: 1px solid lightgray; */
+  min-height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+ }
+ .post-inner-content {
+  width: 100%;
+ }
+ .post-inner-content h4{
+  margin: 0;
+ }
+ .p-event-info {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+ }
+ .p-event-info .p-event-inner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+ }
+.p-event-inner-content .update-btn {
+  border: none;
+  padding: 0.5rem 0.7rem;
+  background: lightcoral;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.p-event-inner-content form .delete-btn {
+  border: 1px solid lightcoral;
+  background: transparent;
+  padding: 0.5rem 0.7rem;
+  color: lightcoral;
+  border-radius: 5px;
+  cursor: pointer;
+}
  /*-------------------------Modal Content---------------------*/
  .modal-bg {
   position: fixed;
@@ -118,7 +162,7 @@ nav .navlinks li a {
 
  .modal {
   border: 1px solid gray;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #fff;
   width: 500px;
   height: 670px;

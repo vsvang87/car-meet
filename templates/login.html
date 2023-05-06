@@ -7,10 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="/static/css/login.css"/>
-<link rel="stylesheet" href="/static/css/navbar.css"/>
 {% endblock %}
 
 {% block body %}
+
+
+<div class="container">
 <nav>
   <div class="navbar-container">
 <a href="/" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
@@ -21,14 +23,9 @@
   </div>
 </nav>
 
-
-
-
-<div class="container">
-<div class="form-container">
-
+<div class="center-container">
+  <div class="form-container">
 <h1 class="login-title">Login</h1>
-
 <div class="flash-msg">
  
   {% for message in get_flashed_messages()%}
@@ -57,9 +54,8 @@
 <div class="create-user">
   <a href="/create_user" class="create-link">Create New User</a>
 </div>
-
 </div>
-
+</div>
 </div>
 <script src="../static/js/login.js"></script>
 {% endblock %}

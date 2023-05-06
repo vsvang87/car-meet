@@ -55,24 +55,27 @@
 </div>
 </section>
 
-<section class="delete-post-container">
-  <div class="p-center-container">
+<section class="delete-post-container">  
+  <div class="post-center-container">
+    <h1>Your Events</h1>
     <div class="p-post-content">
         <div class="post-inner-content">
-
         {% if events %}
           {% for event in events %}
-          <h3>{{ event.title }}</h3>
-          
+          <h4>{{ event.title }}</h4>
+          <div class="p-event-info">
+            <div class="p-event-inner-content">
+              <p>{{ event.date_time }}</p>
           <p>{{ event.address }}</p>
           <p>{{ event.city }}, {{ event.state }} {{ event.zipcode }}</p>
-          <form action="/delete_meetup/{{ event.meet_up_id }}" method="POST">
-          <input type="submit" class="delete-btn" value="Delete"/> 
-       </form>
-       <button class="update-btn" id="id{{event.meet_up_id}}">Update</button>
+            <form action="/delete_meetup/{{ event.meet_up_id }}" method="POST">
+            <input type="submit" class="delete-btn" value="Delete"/> 
+            </form>
+            <button class="update-btn" id="id{{event.meet_up_id}}">Update</button>
+            </div>
+          </div>
         {% endfor %}
        {% endif %}
-       
         </div>
     </div>
   </div>
@@ -80,7 +83,7 @@
 
 <div class="modal-bg">
 <section class="modal" id="modal">
-  <h1>Update Event</h1>
+  <h1>Event Update</h1>
   <button id="modal-close-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
   <div class="modal-container">
 
