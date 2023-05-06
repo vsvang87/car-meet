@@ -17,7 +17,7 @@
     <a href="/meet_up" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
     <ul class="navlinks">
     <li><a href="/meet_up" class="text-black">Search Meet</a></li>
-    <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
+    <li><a href="/create_meet_up_form" class="text-black">Host Meet</a></li>
     <li><a href="/post_content">Post</a></li>
     <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
@@ -63,6 +63,7 @@
         {% if events %}
           {% for event in events %}
           <h3>{{ event.title }}</h3>
+          
           <p>{{ event.address }}</p>
           <p>{{ event.city }}, {{ event.state }} {{ event.zipcode }}</p>
           <form action="/delete_meetup/{{ event.meet_up_id }}" method="POST">
@@ -77,11 +78,13 @@
   </div>
 </section>
 
+<div class="modal-bg">
 <section class="modal" id="modal">
+  <h1>Update Event</h1>
   <button id="modal-close-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
   <div class="modal-container">
 
-    <form action="/update_event" method="post">
+    <form action="/update_event" method="post" class="modal-form">
       <input type="hidden" id="meet_up_id" name="meet_up_id">
 
       <div class="e-form-group">
@@ -109,11 +112,14 @@
         <input type="text" name="zipcode" id="zipcode"/>
       </div>
       <div class="e-form-group">
-        <input type="submit" value="Update" class="update-button"/>
+        <button type="submit" class="update-button">Update</button>
       </div>
     </form>
   </div>
 </section>
+
+</div>
+
 
 <script src="/static/js/userprofile.js"></script>
 {% endblock %}

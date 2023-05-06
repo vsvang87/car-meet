@@ -1,6 +1,7 @@
 const modalOpenBtns = document.querySelectorAll(".update-btn");
 const modalCloseBtn = document.getElementById("modal-close-btn");
 const modalContainer = document.getElementById("modal")
+const modalBg = document.querySelector(".modal-bg")
 
 for (let btn of modalOpenBtns) {
   btn.addEventListener("click", () => {
@@ -9,6 +10,7 @@ for (let btn of modalOpenBtns) {
     let meetUpId = document.getElementById("meet_up_id")
     meetUpId.value = btnSlice
   
+    modalBg.classList.add("bg-active")
     modalContainer.style.display = 'block'
     
 })
@@ -16,4 +18,5 @@ for (let btn of modalOpenBtns) {
 
 modalCloseBtn.addEventListener("click", () => {
   modalContainer.style.display = 'none'
+  modalBg.classList.remove("bg-active")
 })

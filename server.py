@@ -171,7 +171,7 @@ def update_event():
     zipcode = request.form.get("zipcode")
 
     user_id = session.get('user_id')
-    
+    # grabbing the meet_up_id from crud operation
     meetup = crud.get_meet_up_by_id(meet_up_id)
     
     if user_id is None:

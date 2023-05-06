@@ -38,6 +38,7 @@ body {
   border-radius: 5px;
   box-shadow: 5px 10px 5px 0 rgba(0, 0, 0, 0.2);
   width: 35%;
+  max-width: 548px;
   min-height: 55vh;
 }
 
