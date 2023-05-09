@@ -31,11 +31,11 @@ def get_user_by_password(password):
     return User.query.filter(User.password == password).first()
 
 #----------------create post--------------------------------------#
-# def create_post(datetime, post_content, user_id):
+def create_post(date_time, post_content, user_id):
 
-#     post = Post(datetime=datetime, post_content=post_content, user_id=user_id)
+    create_post_content = Post(date_time=date_time, post_content=post_content, user_id=user_id)
     
-#     return post
+    return create_post_content
 
 #-----------------get_user_by_id----------------------------------#
 def get_user_by_id(user_id):
@@ -76,10 +76,3 @@ def update_img_url(image_url, user):
 
     return image_url
 
-#-------------------Update User Profile-----------------------------#
-# def update_user_profile(city, state, username, user):
-#     user.city = city
-#     user.state = state
-#     user.username = username
-
-#     return user

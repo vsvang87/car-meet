@@ -181,7 +181,7 @@ def update_event():
          meetup.title = title
 
     if datetime:
-        meetup.datetime = datetime
+        meetup.date_time = datetime
 
     if address:
         meetup.address = address
@@ -245,26 +245,33 @@ def user_profile_update():
     return redirect("/userprofile")
 
 #----------------------------Post Content Page----------------------------#
-@app.route("/post_content",methods=["GET", "POST"])
+@app.route("/post_content")
 def post_content():
 
-    # date_time = request.form.get("datetime")
-    # posts = request.form.get("posts")
-
-    # user_id = session['user_id']
-    # user = crud.get_user_by_id(user_id)
-
-    # if len(posts) < 1:
-    #     flash("Post cannot be empty!")
-    # else:
-    #     new_post = Post(post_content=posts, user=user)
-    #     db.session.add(new_post)
-    #     db.session.commit()
-    #     flash("Post successful!")
-
-
+    
     return render_template("post_content.html")
 
+
+@app.route("/post_content", methods=["POST"])
+def user_post_content():
+
+    datetime = request.form.get("datetime")
+    posts_content = request.form.get("posts_content")
+
+    user_id = session.get("user_id")
+    user = crud.get_user_by_id(user_id)
+
+    if user_id is None:
+        flash("You have to logged in to create event")
+    else:
+        posts = crud.create_post(datetime, posts_content, user_id)
+        db.session.add(posts)
+        db.session.commit()
+        
+        flash("Post is successful")
+   
+
+    return redirect("/post_content")
 #-----------------------Delete Events-----------------#
 @app.route("/delete_meetup/<meet_id>", methods=["POST"])
 def delete(meet_id):

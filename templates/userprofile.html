@@ -35,7 +35,7 @@
         <p>{{ message }}</p>
       {% endfor %}
 
-      <h1 class="user-name">Hi, {{ user.username }}</h1>
+      <h1 class="text-font-weight">Hi, {{ user.username }}</h1>
       <img src="{{ user.image_url }}" alt=" "/>
       <form action="/post-form-data" method="post" enctype="multipart/form-data" class="cloudinary-form">
         <input type="file" name="my-file" />
@@ -44,8 +44,8 @@
     </div>
 
     <div class="p-info p-col">
-      <h2>{{ user.first_name }} {{ user.last_name }}</h2>
-      <h2> {{ user.city }}, {{ user.state }}</h2>
+      <h2 class="text-font-weight">{{ user.first_name }} {{ user.last_name }}</h2>
+      <h2 class="text-font-weight">{{ user.city }}, {{ user.state }}</h2>
       <div class="edit-profile">
         <a href="/profile_update" class="edit-button">Edit Profile</a>
       </div>
@@ -57,7 +57,7 @@
 
 <section class="delete-post-container">  
   <div class="post-center-container">
-    <h1>Your Events</h1>
+    <h1 class="text-font-weight">Your Events</h1>
     <div class="p-post-content">
         <div class="post-inner-content">
         {% if events %}
@@ -71,7 +71,10 @@
             <form action="/delete_meetup/{{ event.meet_up_id }}" method="POST">
             <input type="submit" class="delete-btn" value="Delete"/> 
             </form>
-            <button class="update-btn" id="id{{event.meet_up_id}}">Update</button>
+            <div class="update-btn-div">
+                <button class="update-btn" id="id{{event.meet_up_id}}">Update</button>
+            </div>
+            
             </div>
           </div>
         {% endfor %}

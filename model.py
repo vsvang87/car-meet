@@ -52,14 +52,14 @@ class Post(db.Model):
     __tablename__ = 'posts'
 
     post_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    post_content = db.Column(db.String(500), nullable=True)
+    post_content = db.Column(db.String(5000), nullable=True)
     date_time = db.Column(db.DateTime, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
 
     user = db.relationship("User", back_populates="posts")
 
     def __repr__(self):
-        return f"<Post post_id={self.post_id} post_content={self.post_content}>"
+        return f"<Post post_id={self.post_id} user_id={self.user_id}>"
 
 
 #------------------------------------------------------------------

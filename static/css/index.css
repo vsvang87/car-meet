@@ -92,10 +92,17 @@ body {
 }
 
 /*----------------------------Gallery Container-------------------------*/
-.gallery-container {
-  min-height: 50vh;
+.space-container {
+  min-height: 110vh;
 }
+.gallery-container {
+  min-height: 80vh;
 
+}
+.gallery-content {
+  border-bottom: 1px solid lightgray;
+  min-height: 80vh;
+}
 /*------------------------------Footer Container------------------------*/
 .footer {
   min-height: 20vh;
@@ -105,4 +112,13 @@ body {
 .center-content {
   width: min(80%, 90rem);
   margin-inline: auto;
+}
+
+@media (max-width: 820px) {
+  .intro-content {
+    width: 100%;
+  }
+  .hamburger-menu-div {
+    position: absolute;
+  }
 }

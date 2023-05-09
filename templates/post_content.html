@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Post Content{% endblock %}
 
-{% block head %} {% endblock %}
+{% block head %} 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="/static/css/base.css">
+<link rel="stylesheet" href="/static/css/navbar.css">
+{% endblock %}
 
 {% block body %} 
 <nav>
@@ -9,7 +16,7 @@
     <a href="/meet_up" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
     <ul class="navlinks">
     <li><a href="/meet_up" class="text-black">Search Meet</a></li>
-    <li><a href="/create_meet_up_form" class="text-black">Create Meet</a></li>
+    <li><a href="/create_meet_up_form" class="text-black">Host Meet</a></li>
     <li><a href="/userprofile">Profile</a></li>
     <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
@@ -18,10 +25,6 @@
 </nav>
 
 
-<h1>Post Content Page</h1>
-{% for message in get_flashed_messages() %}
-<p>{{ message }}</p>
-{% endfor %}
 
 <form action="/post_content" method="POST">
   <div class="p-form-group">
@@ -30,7 +33,8 @@
   </div>
   <div class="p-form-group">
     
-    <textarea cols="10" rows="10" name="posts" placeholder="Enter text"></textarea>
+    <textarea cols="10" rows="10" name="posts_content" placeholder="Enter text"></textarea>
+
   </div>
   <div class="p-form-group">
     <button type="submit">Post</button>
@@ -38,6 +42,7 @@
 </form>
 
 <div class="post-content-container">
+  <h1>Post Content Goes here</h1>
   <ul class="list-group" id="post">
    {% for post in posts %}
     <li>{{ post.post_content }}</li>

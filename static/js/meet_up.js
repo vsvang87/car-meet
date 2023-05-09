@@ -31,7 +31,6 @@ function initMap() {
     lng: -81.9320
   }
  
-
   let map = new google.maps.Map(document.getElementById("map"), {
     center: options,
     zoom: 13,
@@ -57,7 +56,7 @@ function initMap() {
 
         // Zoom in on the geolocated location
         map.setCenter(userLocation);
-        map.setZoom(18);
+        map.setZoom(15);
       } else {
         console.log(`Geocode was unsuccessful for the following reason: ${status}`);
       }

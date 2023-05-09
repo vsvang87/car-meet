@@ -1,5 +1,6 @@
 * {
- font-family: 'Roboto', sans-serif;
+ /* font-family: 'Roboto', sans-serif; */
+ font-family: 'Quicksand', sans-serif; 
 }
 html {
   scroll-behavior: smooth;
@@ -59,6 +60,20 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
+  position: relative;
+  height: 100%;
+}
+.edit-profile-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url(../image/supra3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(80%);
+  opacity: .8;
+  z-index: -1;
 }
 .e-container {
   width: min(80%, 90rem);
@@ -67,7 +82,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 70vh;
-  border-bottom: 1px solid lightgray;
+  /* border-bottom: 1px solid lightgray; */
 }
 .update-col {
   width: 50%;
@@ -80,6 +95,7 @@ align-items: flex-start;
 flex-direction: column;
 width: 100%;
 }
+
 form .e-group-form {
   margin: 0.5rem 0;
   width: 100%;
@@ -94,16 +110,18 @@ form .e-group-form input {
 }
 .cancel {
   text-decoration: none;
+  border: 1px solid lightcoral;
+  color: lightcoral;
 }
 .update {
   border: none;
   cursor: pointer;
+  background: lightcoral;
+  color: #fff;
 }
 .update-button {
   border-radius: 5px;
-  background: lightcoral;
   font-size: 1rem;
-  color: #fff;
   padding: 0.7rem 1rem;
   margin-right: 0.7rem;
 }
