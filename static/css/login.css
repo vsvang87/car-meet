@@ -140,6 +140,13 @@ nav {
   color: black;
 }
 
+/*--------------------------Flash Messages------------------*/
+.success {
+  color: rgb(0, 206, 0);
+}
+.error {
+  color: rgb(255, 44, 44);
+}
 .flash-msg {
   padding: 0;
   margin: 0;

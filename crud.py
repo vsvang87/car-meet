@@ -1,4 +1,4 @@
-from model import db, User, Meetup, Post, connect_to_db
+from model import db, User, Meetup, connect_to_db
 
 
 #-----------------create_user--------------------------------------#

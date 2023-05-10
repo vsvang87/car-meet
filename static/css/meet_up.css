@@ -73,7 +73,20 @@ section .bg-img-container{
 .form-col {
   width: 50%;
 }
-
+/*----------------------------meetup info------------------*/
+.search-content {
+  margin-left: 2rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+.meet-up-info {
+  width: 100%;
+  padding-bottom: 3.5rem;
+}
+/*---------------------------end--------------------------*/
 .state-selection {
   outline: none;
   border: 1px solid lightgray;
@@ -98,7 +111,7 @@ section .bg-img-container{
   border: 1px solid lightcoral;
 }
 
-/*-------------------------Search Content-------------------------*/
+/*-------------------------Google Maps-------------------------*/
 .search-container {
   min-height: 50vh;
   padding: 2rem 0;

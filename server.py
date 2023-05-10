@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, session, redirect, url_for, jsonify
-from model import connect_to_db, db, User, Meetup, Post
+from model import connect_to_db, db, User, Meetup
+# from passlib.hash import argon2
 import crud
 
 import cloudinary.uploader
@@ -16,6 +17,7 @@ from jinja2 import StrictUndefined
 #--------------------------Home page--------------------------------#
 @app.route("/")
 def home():
+    
     
     return render_template("index.html")
 
@@ -37,12 +39,12 @@ def login_user():
     user = crud.get_user_by_email(email)
 
     if not user or user.password != password:
-        flash("Incorrect username, email or password")
+        flash("Incorrect username, email or password", "error")
         return redirect("/login")
     else:
         session['user_email'] = user.email
         session['user_id'] = user.user_id
-        flash("Login Successful!")
+        flash("Login Successful", "success")
         return redirect("/userprofile")
     
 
@@ -67,7 +69,7 @@ def create_new_users():
 
     user = crud.get_user_by_password(password)
     if user:
-        flash("That email already existed")
+        flash("That email already existed", "error")
         return redirect("/create_user")
     else:
         user = crud.create_user(first_name, last_name, username, city , state, email, password)
@@ -146,12 +148,12 @@ def meetup():
     user_id = session['user_id']
 
     if user_id is None:
-        flash("You have to logged in to create event")
+        flash("You have to logged in to create event", "error")
     else:
         meets = crud.meet_up(title, datetime, address, city, state, zipcode, user_id)
         db.session.add(meets)
         db.session.commit()
-        flash("Post is successful")
+        flash("Post is successful", "success")
     
     return redirect("/userprofile")
 
@@ -175,7 +177,7 @@ def update_event():
     meetup = crud.get_meet_up_by_id(meet_up_id)
     
     if user_id is None:
-        flash("You have to log in to update event")
+        flash("You have to log in to update event", "error")
 
     if title:
          meetup.title = title
@@ -196,7 +198,7 @@ def update_event():
         meetup.zipcode = zipcode
   
     db.session.commit()
-    flash("Event update successful")
+    flash("Event update successful", "success")
 
     return redirect("/userprofile")
 
@@ -240,50 +242,22 @@ def user_profile_update():
        
 
     db.session.commit()
-    flash("Profile update successful")
+    flash("Profile update successful", "success")
 
     return redirect("/userprofile")
 
-#----------------------------Post Content Page----------------------------#
-@app.route("/post_content")
-def post_content():
-
-    
-    return render_template("post_content.html")
-
-
-@app.route("/post_content", methods=["POST"])
-def user_post_content():
-
-    datetime = request.form.get("datetime")
-    posts_content = request.form.get("posts_content")
-
-    user_id = session.get("user_id")
-    user = crud.get_user_by_id(user_id)
-
-    if user_id is None:
-        flash("You have to logged in to create event")
-    else:
-        posts = crud.create_post(datetime, posts_content, user_id)
-        db.session.add(posts)
-        db.session.commit()
-        
-        flash("Post is successful")
-   
-
-    return redirect("/post_content")
 #-----------------------Delete Events-----------------#
 @app.route("/delete_meetup/<meet_id>", methods=["POST"])
 def delete(meet_id):
 
     user = session.get("user_id")
     if user is None:
-        flash("You must logged in to delete a post")
+        flash("You must logged in to delete a post", "error")
     else:
         meetup = Meetup.query.filter(Meetup.meet_up_id == meet_id).first()
         db.session.delete(meetup)
         db.session.commit()
-        flash("Event has been deleted")
+        flash("Event has been deleted", "success")
 
     
     return redirect("/userprofile")
@@ -294,9 +268,43 @@ def delete(meet_id):
 def logout():
 
     session.clear()
-    flash("Logged out successful")
+    flash("Logged out successful", "success")
    
     return redirect("/login")
+
+
+#--------------------Format Date & Time-------------------------#
+@app.template_filter("datetime_format")
+def datetime_format(value, format='%B'):
+
+    return value.strftime(format)
+
+
+@app.template_filter("time_format")
+def time_format(value, time='%H'):
+
+    return value.strftime(time)
+#------------------------Password Encrypt---------------------#
+
+# def hash_password(passwd):
+#     print("Your raw password is:", passwd)
+
+#     hashed = argon2.hash(passwd)
+#     print("Hashed password for security!", hashed)
+    # When you register a new user, you should store this hashed password in the DB, 
+    # not the plain password.
+
+    # while True:
+    #     attempt = input("Enter your password: ")
+        # In your login route, use argon2.verify to make sure 
+        # the user entered the correct password.
+#         if argon2.verify(attempt, hashed):
+#             print("Correct!")
+#             break
+#         else:
+#             print("Incorrect!")
+
+# hash_password("my_password")
 
 #-----------------------------------------------------------#
 

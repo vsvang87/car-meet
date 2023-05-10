@@ -35,7 +35,7 @@
       <h1 class="title">Find Local Car Meet - Host Your Own Meet Up</h1>
       <a href="/create_meet_up_form" class="host-meet-button">Host Meet</a>
     </div>
-    <p>Don't miss out on car show and events around you. Use the city and state to find meets in your area.</p>
+    <p>Don't miss out on car show and events around you. Use the city and state to find meet up in your area.</p>
     <div class="state-city-container">
       
      <div class="form-search form-col">
@@ -51,10 +51,13 @@
         {%if meetups%}
 
         {% for meetup in meetups %}
-        <h3>{{ meetup.title }}</h3>
-        <p>{{ meetup.date_time }}</p>
+        <div class="meet-up-info">
+           <h3>{{ meetup.title }}</h3>
+        <p>{{ meetup.date_time|datetime_format('%B %d, %Y') }} - {{ meetup.date_time|time_format('%H:%M %p') }}</p>
         <p>{{ meetup.address }}</p>
         <p>{{ meetup.city }}, {{ meetup.state }} {{ meetup.zipcode }}</p>
+        </div>
+       
         {% endfor %}
 
         {%else%}

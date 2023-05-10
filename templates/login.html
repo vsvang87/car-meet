@@ -27,10 +27,19 @@
   <div class="form-container">
 <h1 class="login-title">Login</h1>
 <div class="flash-msg">
- 
-  {% for message in get_flashed_messages()%}
-    <p id="flashed-message">{{ message }}</p>
-  {% endfor %}
+ {% with messages = get_flashed_messages(with_categories=true)%}
+
+      {% if messages %}
+      {% for category, message in messages %}
+
+      <div class="flash-message-div">
+        <p class="{{ category }}">{{ message }}</p>
+      </div>
+        
+      {% endfor %}
+      {% endif %}
+
+      {% endwith %}
  
 </div>
 

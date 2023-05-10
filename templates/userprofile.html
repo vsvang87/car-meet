@@ -29,11 +29,19 @@
 <div class="p-container">
   <div class="p-center-container">
     <div class="p-image p-col">
+      {% with messages = get_flashed_messages(with_categories=true)%}
 
-      {% for message in get_flashed_messages()%}
-        <p>{{ message }}</p>
+      {% if messages %}
+      {% for category, message in messages %}
+
+      <div class="flash-message-div">
+        <p class="{{ category }}">{{ message }}</p>
+      </div>
+        
       {% endfor %}
+      {% endif %}
 
+      {% endwith %}
       <h1 class="text-font-weight">Hi, {{ user.username }}</h1>
       <img src="{{ user.image_url }}" alt=" "/>
       <form action="/post-form-data" method="post" enctype="multipart/form-data" class="cloudinary-form">
@@ -64,11 +72,16 @@
           <h4>{{ event.title }}</h4>
           <div class="p-event-info">
             <div class="p-event-inner-content">
-              <p>{{ event.date_time }}</p>
+              <div class="datetime-div">
+                 <p>{{ event.date_time|datetime_format('%B %d, %Y') }} </p>
+                 <p>{{ event.date_time|time_format('%H:%M %p') }}</p>
+              </div>
           <p>{{ event.address }}</p>
           <p>{{ event.city }}, {{ event.state }} {{ event.zipcode }}</p>
             <form action="/delete_meetup/{{ event.meet_up_id }}" method="POST">
-            <input type="submit" class="delete-btn" value="Delete"/> 
+              <div class="delete-btn-div">
+                <input type="submit" class="delete-btn" value="Delete"/> 
+              </div>
             </form>
             <div class="update-btn-div">
                 <button class="update-btn" id="id{{event.meet_up_id}}">Update</button>
