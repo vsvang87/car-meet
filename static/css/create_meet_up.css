@@ -10,10 +10,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url(../image/hatch-civic-si.jpg);
+  background-image: url(../image/red-86.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  object-fit: cover;
   z-index: -1;
   opacity: .8;
   filter: brightness(60%);

@@ -60,10 +60,10 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
-  position: relative;
+ /*  position: relative; */
   height: 100%;
 }
-.edit-profile-container::after {
+/* .edit-profile-container::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -74,7 +74,7 @@ nav {
   filter: brightness(80%);
   opacity: .8;
   z-index: -1;
-}
+} */
 .e-container {
   width: min(80%, 90rem);
   margin-inline: auto;
@@ -82,7 +82,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 70vh;
-  /* border-bottom: 1px solid lightgray; */
+  border-bottom: 1px solid lightgray;
 }
 .update-col {
   width: 50%;
@@ -108,6 +108,7 @@ form .e-group-form input {
   border-radius: 5px;
   font-size: 1.2rem;
 }
+
 .cancel {
   text-decoration: none;
   border: 1px solid lightcoral;

@@ -26,7 +26,7 @@ nav .navlinks li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 30vh;
+  min-height: 20vh;
   padding: 2rem 0;
 
 }
@@ -44,7 +44,7 @@ nav .navlinks li a {
   width: 50%;
 }
 .p-center-container .p-image img {
-  width: 70%;
+  width: 50%;
   object-fit: cover;
   /* min-height: 350px; */
 }
