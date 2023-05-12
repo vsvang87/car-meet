@@ -1,6 +1,7 @@
-from flask import Flask, render_template, request, flash, session, redirect, url_for, jsonify
+from flask import Flask, render_template, request, flash, session, redirect
 from model import connect_to_db, db, User, Meetup
 # from passlib.hash import argon2
+
 import crud
 
 import cloudinary.uploader
@@ -14,13 +15,34 @@ app = Flask(__name__)
 app.secret_key = "DEV"
 from jinja2 import StrictUndefined
 
+
+#------------------------Hash Password--------------------------#
+# def hash_password(passwd):
+#     print("Your raw password is:", passwd)
+
+#     hashed = argon2.hash(passwd)
+#     print("Hashed password for security!", hashed)
+    # When you register a new user, you should store this hashed password in the DB, 
+    # not the plain password.
+
+    # while True:
+    #     attempt = input("Enter your password: ")
+        # In your login route, use argon2.verify to make sure 
+        # the user entered the correct password.
+#         if argon2.verify(attempt, hashed):
+#             print("Correct!")
+#             break
+#         else:
+#             print("Incorrect!")
+
+# hash_password("my_password")
+
 #--------------------------Home page--------------------------------#
 @app.route("/")
 def home():
     
     
     return render_template("index.html")
-
 
 #--------------------------User Login-----------------------------#
 @app.route("/login")
@@ -100,22 +122,27 @@ def user_profile():
 @app.route("/post-form-data", methods=["POST"])
 def userprofile_username():
 
+    
     my_file = request.files['my-file']
     result = cloudinary.uploader.upload(my_file, api_key = CLOUDINARY_KEY, api_secret = CLOUDINARY_SECRET, cloud_name = CLOUD_NAME)
-    image_url = result['secure_url']
-    #getting user session
-    email = session['user_email']
-    # getting the email function from crud
-    user = crud.get_user_by_email(email)
-    # updating user image from crud
-    crud.update_img_url(image_url, user)
-    db.session.add(user)
-    db.session.commit()
+
+    
+    if result is None or my_file is None:
+        flash("Image field cannot be empty", "error")
+        return redirect("/profile_update")
+    else:
+        image_url = result['secure_url']
+        #getting user session
+        email = session['user_email']
+        # getting the email function from crud
+        user = crud.get_user_by_email(email)
+        # updating user image from crud
+        crud.update_img_url(image_url, user)
+        db.session.add(user)
+        db.session.commit()
 
     return redirect("/profile_update")
    
-
-
 #---------------------------search meet up-----------------------------#
 @app.route("/meet_up")
 def meet_up():
@@ -285,27 +312,6 @@ def datetime_format(value, format='%B'):
 def time_format(value, time='%H'):
 
     return value.strftime(time)
-#------------------------Password Encrypt---------------------#
-
-# def hash_password(passwd):
-#     print("Your raw password is:", passwd)
-
-#     hashed = argon2.hash(passwd)
-#     print("Hashed password for security!", hashed)
-    # When you register a new user, you should store this hashed password in the DB, 
-    # not the plain password.
-
-    # while True:
-    #     attempt = input("Enter your password: ")
-        # In your login route, use argon2.verify to make sure 
-        # the user entered the correct password.
-#         if argon2.verify(attempt, hashed):
-#             print("Correct!")
-#             break
-#         else:
-#             print("Incorrect!")
-
-# hash_password("my_password")
 
 #-----------------------------------------------------------#
 

@@ -39,7 +39,7 @@
   <div class="p-center-container">
 
     <div class="big-color-div row">
-      
+  
     </div>
 
     <div class="flex-box-div row">
@@ -47,14 +47,15 @@
       <img src="{{ user.image_url }}" alt="image of user's car"/>
       <p class="name">{{ user.first_name }} {{ user.last_name }}</p>
       <p class="location">{{ user.city }}, {{ user.state }}</p>
-      <div class="edit-profile">
-        <a href="/profile_update" class="edit-button">Edit Profile</a>
-      </div>
+      
     </div>
 
     <div class="p-info p-col">
       <h1 class="text-font-weight">Hello, {{ user.username }}</h1>
-   
+      <div class="edit-profile">
+        <a href="/profile_update" class="edit-button">Edit Profile</a>
+        <a href="/create_meet_up_form" class="edit-button">Host Event</a>
+      </div>
     </div>
 
     </div>
@@ -65,7 +66,7 @@
 
 <section class="delete-post-container">  
   <div class="post-center-container">
-    <h1 class="text-font-weight">Your Events</h1>
+    <h1 class="text-font-weight">Events</h1>
     <div class="p-post-content">
         <div class="post-inner-content">
         {% if events %}

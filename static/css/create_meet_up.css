@@ -55,13 +55,27 @@ form {
   padding: 0.7rem 0.5rem;
   background: rgb(240, 240, 240);
 }
-.form-group .submit-button {
-  background: lightcoral;
-  border: none;
+
+.button-group .btn {
+  border: 1px solid lightcoral;
   border-radius: 5px;
   font-size: 1.2rem;
   color: #fff;
   padding: 0.5rem 1rem;
   cursor: pointer;
   margin-top: 0.5rem;
+  transition: 0.15s ease-in-out;
+}
+.button-group .submit-button {
+  background: lightcoral;
+  
+}
+.button-group .submit-button:hover {
+  background: transparent;
+}
+.button-group .cancel-btn {
+  text-decoration: none;
+}
+.button-group .cancel-btn:hover {
+  background: lightcoral;
 }

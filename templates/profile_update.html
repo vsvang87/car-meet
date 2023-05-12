@@ -28,6 +28,16 @@
     </div>
 
     <div class="form-container update-col">
+      {% with messages = get_flashed_messages(with_categories=true)%}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="flash-message-div">
+        <p class="{{ category }}">{{ message }}</p>
+      </div>   
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+
       <h1>Profile update</h1>
 
         <div class="cloudinary-div">

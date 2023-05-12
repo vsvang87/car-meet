@@ -37,6 +37,7 @@ nav .navlinks li a {
 .p-container {
   width: min(80%, 90rem);
   margin-inline: auto;
+ 
 }
 .p-center-container {
   display: flex;
@@ -46,14 +47,15 @@ nav .navlinks li a {
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+  
 }
 .p-col {
   width: 50%;
 }
 .p-center-container .p-image img {
   clip-path: circle();
-  width: 40%;
-  max-width: 50%;
+  width: 30%;
+  
 }
 
 .text-font-weight {
@@ -62,7 +64,7 @@ nav .navlinks li a {
   font-weight: 550;
 }
 .p-center-container .big-color-div {
-  background: linear-gradient(to right, rgb(157, 206, 238), rgb(158, 220, 228), rgb(170, 218, 139), rgb(209, 209, 209));
+  background: linear-gradient(to right, rgb(157, 206, 238), rgb(158, 220, 228), rgb(170, 218, 139), rgb(255, 224, 224));
   border-radius: 10px 10px 0 0;
   width: 100%;
 }
@@ -72,27 +74,32 @@ nav .navlinks li a {
 }
 .p-center-container .flex-box-div {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 2rem;
   background: #fff;
   border-radius: 0 0 10px 10px;
   width: 100%;
-  position: relative;
   height: 270px;
 }
 .p-center-container .flex-box-div .p-image {
   margin-top: -12rem;
 }
-.p-center-container .flex-box-div .p-image p {
-  position: absolute;
-  left: 1.5rem;
-  bottom: 4.2rem;
-  margin: 0;
-  padding: 0 1rem;
+.flex-box-div {
+  position: relative;
 }
-.p-center-container .flex-box-div .p-image .name{
-  bottom: 5.8rem;
+.flex-box-div .p-image {
+  position: absolute;
+  top: 5.5rem;
+  left: 2rem;
+  
+}
+.flex-box-div .p-image p {
+  padding-left: 2rem;
+}
+.p-info {
+  position: absolute;
+  right: 0;
 }
 /*----------------------City, State Form---------------------------*/
 .city-state-form {
@@ -103,11 +110,7 @@ nav .navlinks li a {
   width: 100%;
   font-size: 1.2rem;
 }
-.edit-profile {
-  position: absolute;
-  bottom: 2rem;
-  left: 2.5rem;
-}
+
 .edit-button {
   text-decoration: none;
   padding: 0.5rem .8rem;
@@ -134,7 +137,10 @@ nav .navlinks li a {
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+ }
+ .post-center-container h1 {
   padding: 1rem;
+  margin: 0;
  }
  .p-post-content {
   padding: 1rem 0;
@@ -146,6 +152,7 @@ nav .navlinks li a {
  }
  .post-inner-content {
   width: 100%;
+  padding: 1rem;
  }
  .post-inner-content h4{
   margin: 0;
@@ -159,7 +166,7 @@ nav .navlinks li a {
  }
  .p-event-info .p-event-inner-content {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
   width: 100%;
  }
