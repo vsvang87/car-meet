@@ -1,30 +1,4 @@
-// const searchBtn = document.getElementById("search-button");
 
-// const findMyState = () => {
-//   const success = (position) => {
-//   console.log(position)
-   
-//     const latitude = position.coords.latitude;
-//     const longitude = position.coords.longitude;
-
-//     const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
-
-//     fetch(geoApiUrl)
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log(data)
-//         document.getElementById('findCity').innerHTML = data.city;
-//         document.getElementById('findState').innerHTML = data.principalSubdivision;
-//     })
-//   }
-//   const error = () => {
-//     console.log("Error, unable to retrieve data")
-//   }
-//   navigator.geolocation.getCurrentPosition(success, error);
-// }
-// searchBtn.addEventListener("click", findMyState());
-
-// google maps
 function initMap() {
   let options = {
     lat: 34.9496,

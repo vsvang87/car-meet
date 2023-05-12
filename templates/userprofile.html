@@ -16,48 +16,49 @@
   <div class="navbar-container">
     <a href="/meet_up" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
     <ul class="navlinks">
-    <li><a href="/meet_up" class="text-black">Search Meet</a></li>
-    <li><a href="/create_meet_up_form" class="text-black">Host Meet</a></li>
+    <li><a href="/meet_up" class="text-black">Search Event</a></li>
+    <li><a href="/create_meet_up_form" class="text-black">Host Event</a></li>
     <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
   </ul>
    
   </div>
 </nav>
 
-
+   {% with messages = get_flashed_messages(with_categories=true)%}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="flash-message-div">
+        <p class="{{ category }}">{{ message }}</p>
+      </div>   
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+ 
 <section class="user-profile">
 <div class="p-container">
   <div class="p-center-container">
-    <div class="p-image p-col">
-      {% with messages = get_flashed_messages(with_categories=true)%}
 
-      {% if messages %}
-      {% for category, message in messages %}
-
-      <div class="flash-message-div">
-        <p class="{{ category }}">{{ message }}</p>
-      </div>
-        
-      {% endfor %}
-      {% endif %}
-
-      {% endwith %}
-      <h1 class="text-font-weight">Hi, {{ user.username }}</h1>
-      <img src="{{ user.image_url }}" alt=" "/>
-      <form action="/post-form-data" method="post" enctype="multipart/form-data" class="cloudinary-form">
-        <input type="file" name="my-file" />
-        <input type="submit" value="submit" class="upload-button"/>
-      </form>
+    <div class="big-color-div row">
+      
     </div>
 
-    <div class="p-info p-col">
-      <h2 class="text-font-weight">{{ user.first_name }} {{ user.last_name }}</h2>
-      <h2 class="text-font-weight">{{ user.city }}, {{ user.state }}</h2>
+    <div class="flex-box-div row">
+      <div class="p-image p-col">
+      <img src="{{ user.image_url }}" alt="image of user's car"/>
+      <p class="name">{{ user.first_name }} {{ user.last_name }}</p>
+      <p class="location">{{ user.city }}, {{ user.state }}</p>
       <div class="edit-profile">
         <a href="/profile_update" class="edit-button">Edit Profile</a>
       </div>
     </div>
-       
+
+    <div class="p-info p-col">
+      <h1 class="text-font-weight">Hello, {{ user.username }}</h1>
+   
+    </div>
+
+    </div>
+
   </div>
 </div>
 </section>

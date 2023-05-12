@@ -77,6 +77,7 @@ def create_new_users():
         db.session.commit()
         session['user_email'] = user.email
         session['user_id'] = user.user_id
+        flash("Create user successful", "success")
 
     return redirect("/userprofile")
         
@@ -111,7 +112,7 @@ def userprofile_username():
     db.session.add(user)
     db.session.commit()
 
-    return redirect("/userprofile")
+    return redirect("/profile_update")
    
 
 

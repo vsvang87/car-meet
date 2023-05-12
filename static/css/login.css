@@ -151,3 +151,15 @@ nav {
   padding: 0;
   margin: 0;
 }
+
+/*------------------------Media Query------------------------*/
+@media (max-width:900px) {
+  .form-container {
+    width: 80%;
+  }
+}
+@media (max-width: 550px) {
+  .navbar-container {
+  flex-wrap: wrap;
+}
+}

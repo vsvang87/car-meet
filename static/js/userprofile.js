@@ -21,8 +21,3 @@ modalCloseBtn.addEventListener("click", () => {
   modalBg.classList.remove("bg-active")
 })
 
-//Date Time 
-/* function setValue(element, date) {
-  const isString = date.toISOString()
-  element.value = isString.substring(0,isString.indexOf("T") + 6)
-} */

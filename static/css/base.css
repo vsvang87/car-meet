@@ -46,7 +46,7 @@ nav {
 .navbar-logo {
   text-decoration: none;
   color: #fff;
-   font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 .navlinks {
   display: flex;
@@ -55,7 +55,7 @@ nav {
 }
 .navlinks li {
   list-style: none;
-  padding: 1rem 0.7rem;
+  padding: 2rem 0.7rem;
 }
 .navlinks li a {
   text-decoration: none;
