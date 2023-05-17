@@ -126,20 +126,16 @@ def userprofile_username():
     my_file = request.files['my-file']
     result = cloudinary.uploader.upload(my_file, api_key = CLOUDINARY_KEY, api_secret = CLOUDINARY_SECRET, cloud_name = CLOUD_NAME)
 
-    
-    if result is None or my_file is None:
-        flash("Image field cannot be empty", "error")
-        return redirect("/profile_update")
-    else:
-        image_url = result['secure_url']
-        #getting user session
-        email = session['user_email']
-        # getting the email function from crud
-        user = crud.get_user_by_email(email)
-        # updating user image from crud
-        crud.update_img_url(image_url, user)
-        db.session.add(user)
-        db.session.commit()
+
+    image_url = result['secure_url']
+    #getting user session
+    email = session['user_email']
+    # getting the email function from crud
+    user = crud.get_user_by_email(email)
+    # updating user image from crud
+    crud.update_img_url(image_url, user)
+    db.session.add(user)
+    db.session.commit()
 
     return redirect("/profile_update")
    

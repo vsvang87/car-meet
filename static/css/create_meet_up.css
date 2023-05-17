@@ -1,23 +1,13 @@
+* {
+    font-family: 'Roboto', sans-serif; 
+}
+.navbar-container {
+  border-bottom: 1px solid lightgray;
+}
 
 .create-meet-section {
   min-height: 80vh;
   padding: 1rem 0;
- /*  background: rgb(240, 240, 240); */
-  position: relative;
-  color: #fff;
-}
-.create-meet-section::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url(../image/toyota-86.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: cover;
-  z-index: -1;
-  opacity: .8;
-  filter: brightness(60%);
 }
 .meet-up-container {
   width: min(80%, 90rem);
@@ -50,10 +40,10 @@ form {
   font-size: 1.2rem;
   width: 100%;
   outline: none;
-  border: 1px solid lightgray; 
-  border-radius: 5px; 
-  padding: 0.7rem 0.5rem;
-  background: rgb(240, 240, 240);
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 0.7rem 0.2rem;
+  
 }
 
 .button-group .btn {
@@ -68,14 +58,38 @@ form {
 }
 .button-group .submit-button {
   background: lightcoral;
-  
+  margin-right: .5rem;
 }
-.button-group .submit-button:hover {
-  background: transparent;
-}
+
 .button-group .cancel-btn {
   text-decoration: none;
+  color: lightcoral;
 }
-.button-group .cancel-btn:hover {
-  background: lightcoral;
+
+/*---------------------------Media Query-------------------------*/
+@media (max-width: 900px) {
+  .meet-up-container {
+    
+    flex-wrap: wrap;
+    width: 100%;
+  }
+.inner-content {
+  padding-left: 0;
+}
+}
+@media (max-width: 650px) {
+  .navbar-logo {
+    display: none;
+  }
+}
+@media (max-width: 570px) {
+  .navlinks {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 400px) {
+  .button-group .submit-button{
+    margin-bottom: 1rem;
+  }
+  
 }

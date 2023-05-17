@@ -8,8 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<link rel="stylesheet" href="/static/css/base.css"/>
-<link rel="stylesheet" href="/static/css/navbar.css"/>
 <link rel="stylesheet" href="/static/css/meet_up.css"/>
 {% endblock %}
 
@@ -56,8 +54,8 @@
         <div class="meet-up-info">
            <h3>{{ meetup.title }}</h3>
         <p>{{ meetup.date_time|datetime_format('%B %d, %Y') }} - {{ meetup.date_time|time_format('%H:%M %p') }}</p>
-        <p>{{ meetup.address }}</p>
-        <p>{{ meetup.city }}, {{ meetup.state }} {{ meetup.zipcode }}</p>
+        <p id="address">{{ meetup.address }}</p>
+        <p id="city-state-zip">{{ meetup.city }}, {{ meetup.state }} {{ meetup.zipcode }}</p>
         </div>
        
         {% endfor %}
@@ -87,7 +85,10 @@
 {% block footer %}
 <footer class="footer">
   <div class="center-content">
-    <h2>Footer Content</h2>
+    <div class="footer-content">
+      <h2>Footer Content</h2>
+    </div>
+    
   </div>
 </footer>
 {% endblock %}

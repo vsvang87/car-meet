@@ -6,7 +6,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="/static/css/base.css"/>
 <link rel="stylesheet" href="/static/css/navbar.css"/>
 <link rel="stylesheet" href="/static/css/create_meet_up.css"/>
 {% endblock %}
@@ -32,28 +31,28 @@
        <form action="/create_meet_up_form" method="POST">
        <h1>Host your own meet up</h1>
        <div class="form-group">
-        <label for="text">Title</label>
-      <input type="text" name="title" id="title" required/>
+      
+      <input type="text" name="title" id="title" placeholder="Title..." required/>
       </div>
       <div class="form-group">
-        <label for="datetime">Date Time</label>
+        
       <input type="datetime-local" name="datetime" id="datetime" required/>
       </div>
       <div class="form-group">
-        <label for="address">Address</label>
-        <input type="address" name="address" id="address" required/>
+       
+        <input type="address" name="address" id="address" placeholder="Address..." required/>
       </div>
       <div class="form-group">
-        <label for="city">City</label>
-        <input type="text" name="city" id="city" required>
+       
+        <input type="text" name="city" id="city" placeholder="City..." required>
       </div>
       <div class="form-group">
-        <label for="state">State</label>
-        <input type="text" name="state" id="state" required>
+        
+        <input type="text" name="state" id="state" placeholder="State..." required>
       </div>
       <div class="form-group">
-        <label for="zipcode">Zipcode</label>
-        <input type="text" name="zipcode" id="zipcode" required>
+        
+        <input type="text" name="zipcode" id="zipcode" placeholder="Zipcode..." required>
       </div>
       <div class="button-group">
         <button type="submit" class="submit-button btn">Post</button>
@@ -67,9 +66,9 @@
     <div class="meet-up-content meet-col">
       <div class="inner-content">
         <h3>Hosting</h3>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit tenetur exercitationem magni alias a dolore, quaerat neque corrupti. Odit veniam consequatur maiores saepe expedita tenetur reprehenderit necessitatibus ab nam amet.</p>
+        <p>Posting an event to Car-Meet is free and easy. Just fill out the form with the correct info and click post when done. Feel free to contact us if you have any issues.</p>
         <h3>Support Your Local Groups</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, amet vitae magnam inventore fugit perferendis ipsam. Obcaecati, magnam iusto nisi voluptates saepe aperiam quaerat. Nesciunt illum sapiente quaerat optio voluptatum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem consectetur quod iusto natus odit molestias. Earum laboriosam deserunt repellendus error cum quo consequuntur beatae. Voluptates nulla ipsum architecto mollitia culpa!</p>
+        <p>Like many things this year, car groups that support local charities have struggled. Make sure to continue supporting them even if you can't make it to an event. Car groups actually do a lot for organizations in your community in addition to providing weekend entertainment.</p>
       </div>
     </div>
   </div>
@@ -80,7 +79,9 @@
 {% block footer %}
 <footer class="footer">
   <div class="center-content">
-    <h2>Footer Content</h2>
+    <a href="#" class="navbar-logo">C M </a>
+
+    .
   </div>
 </footer>
 {% endblock %}

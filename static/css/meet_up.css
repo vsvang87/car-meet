@@ -1,4 +1,62 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
 
+/*------------------------------Navbar-------------------------------------*/
+nav {
+  font-size: 1.2rem;
+
+}
+
+.navbar-container {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-logo {
+  text-decoration: none;
+  color: #353535;
+   font-size: 1.5rem;
+}
+.navbar-logo img {
+  width: 50px;
+  height: 50px;
+}
+.navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navlinks li {
+  list-style: none;
+  padding: 2rem 1rem;
+}
+.navlinks li a {
+  font-size: 1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.5rem 0.7rem;
+  transition: 0.15s ease-in-out;
+}
+.navlinks li a:hover {
+  border: 1px solid lightcoral;
+  color: lightcoral;
+}
+.text-black {
+  color:black;
+}
+
+/*----------------------------Main Section-----------------------------*/
 section .bg-img-container{
   background-image: url('../image/car-meet3.jpg');
   background-position: center;
@@ -46,7 +104,7 @@ section .bg-img-container{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 1rem 0;
+  padding: 2rem 0;
   
 }
 .state-city-container .form-search {
@@ -75,7 +133,7 @@ section .bg-img-container{
 }
 /*----------------------------meetup info------------------*/
 .search-content {
-  margin-left: 2rem;
+  margin-left: 4rem;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 100%;
@@ -124,4 +182,38 @@ section .bg-img-container{
 
 #map {
   height: 60vh;
+}
+
+/*----------------------Footer-------------------------------*/
+.footer {
+  min-height: 15vh;
+}
+
+/*----------------------Media Query-----------------------------*/
+@media (max-width: 900px) {
+  
+/*---------------main section-------------------*/  
+  .find-meet {
+ flex-wrap: wrap;
+}
+  .state-city-container {
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.state-city-container .form-search {
+  border-right: none;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 2rem;
+}
+
+.form-search form input {
+  width: 67%;
+}
+.form-col {
+  width: 100%;
+  text-align: center;
+}
+.search-content {
+  margin-left: 0;
+}
 }

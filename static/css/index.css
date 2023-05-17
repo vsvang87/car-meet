@@ -2,34 +2,34 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  
+  font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
 }
 /*-----------------------Home Container-------------------------------*/
-.home-page, .gallery-container {
-  padding: 1rem 0;
+.home-page {
   width: 100%;
   position: relative; 
-  min-height: 100vh;
+  min-height: 70vh;
 }
 .home-page::after {
   content: '';
   position: absolute;
   inset: 0;
   display: block;
-  background-image: url(../image/sti-370z.jpg);
+  background-image: url(../image/white-nsx.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: brightness(80%);
-  opacity: 0.8;
+  filter: brightness(70%);
+  opacity: 0.9;
   z-index: -1;
 }
 
 .base-container {
   width: min(80%, 90rem);
   margin-inline: auto;
+  
 }
 .intro-container {
   width: min(80%, 90rem);
@@ -37,7 +37,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  min-height: 70vh;
 }
 .intro-content {
   width: 50%;
@@ -46,10 +46,21 @@ body {
 .intro-content h1 {
   font-size: 4rem;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
 }
+.intro-content .font-family {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: all 1.5s;
+  transform: translateY(-3em);
+}
+.login-div .btn {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: all 1.5s;
+  transform: translateY(-3em);
+}
+
 .intro-content span {
   color: lightcoral;
+ 
 }
 .intro-content p {
   padding: 1rem 0;
@@ -85,7 +96,13 @@ body {
 }
 
 
-/*-----------------------------Grid Layour-----------------------------*/
+/*-----------------------------Mid Container Layour-----------*/
+.three-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
 
 /*------------------------------Media query------------------------*/
 

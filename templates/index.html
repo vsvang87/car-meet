@@ -18,8 +18,8 @@
 <nav>
   <div class="navbar-container">
   <a href="#" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
+
   <ul class="navlinks">
-   
     <li><a href="/login" class="login-button">Login</a></li>
     <li><a href="/create_user" class="signup-button">Sign Up</a></li>
   </ul>
@@ -34,37 +34,51 @@
   <div class="intro-container">
     <div class="intro-content">
       <h1 class="font-family">
-        <span>Meet</span> and greet others in your area.
+        <span>Find</span> car events in your location.
       </h1>
-      <p>Meet other drivers in your location and show off your ride.</p>
+      <p class="font-family">Meet other drivers in your area and show off your ride.</p>
       <div class="login-div">
-        <a href="/login" class="login-button">Login</a>
-     <a href="/create_user" class="signup-button">Sign Up</a>
+        <a href="/login" class="login-button btn">Login</a>
+     <a href="/create_user" class="signup-button btn">Sign Up</a>
       </div>
     </div>
   </div>
+
 </section>
 
+<section class="three-container">
 
+  <div class="local">
+    <div class="local-container">
+      <div class="inner-content">
+        <h3>Left</h3>
+      </div>
+    </div>
+  </div>
+
+   <div class="local">
+    <div class="local-container">
+      <div class="inner-content">
+        <h3>Middle</h3>
+      </div>
+    </div>
+  </div>
+
+   <div class="local">
+    <div class="local-container">
+      <div class="inner-content">
+        <h3>Right</h3>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../static/js/index.js"></script>
 {% endblock %}
 
 
 {% block footer %}
-<footer class="footer">
-  <div class="base-container">
-    <div class="inner-footer-content">
-      <div class="logo-div footer-col">
-        <a href="/" class="footer-logo">C M <i class="fa-solid fa-car"></i></a>
-      </div>
-      <div class="footer-info footer-col">
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
-      <ul class="footer-links footer-col">
-         <li><a href="/login" class="footer-login">Login</a></li>
-          <li><a href="/create_user" class="footer-login">Sign Up</a></li>
-      </ul>
-    </div>
-  </div>
-</footer>
+
 {% endblock %}

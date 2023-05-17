@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', sans-serif; 
+  
+}
 body {
   background-color: rgb(240, 240, 240);
 }
@@ -96,6 +100,7 @@ nav .navlinks li a {
 }
 .flex-box-div .p-image p {
   padding-left: 2rem;
+  margin: 0;
 }
 .p-info {
   position: absolute;
@@ -200,6 +205,10 @@ nav .navlinks li a {
 .update-btn-div, .delete-btn-div {
   text-align: right;
 }
+/*----------------------------Footer--------------------------*/
+.footer {
+  min-height: 15vh;
+}
 
  /*-------------------------Modal Content---------------------*/
  .modal-bg {
@@ -297,4 +306,46 @@ nav .navlinks li a {
 .flash-message-div {
   width: min(80%, 90rem);
   margin-inline: auto;
+}
+
+/*---------------------------Meida Query-----------------------------*/
+@media (max-width: 900px) {
+  .p-center-container .p-image img {
+  clip-path: circle();
+  width: 60%;
+}
+.delete-btn-div .delete-btn{
+  width: 100%;
+}
+.text-font-weight {
+   text-align: center;
+}
+.post-inner-content h4{
+  margin-bottom: 0.3rem;
+  text-align: center;
+ }
+.p-event-info .p-event-inner-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.p-event-info .p-event-inner-content p {
+  margin: 0;
+}
+}
+
+@media (max-width: 650px) {
+  .navbar-logo {
+    display: none;
+  }
+}
+@media (max-width: 550px) {
+  .navlinks {
+    flex-wrap: wrap;
+  }
 }
