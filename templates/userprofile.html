@@ -34,33 +34,28 @@
       {% endwith %}
  
 <section class="user-profile">
-<div class="p-container">
-  <div class="p-center-container">
+  <div class="p-container">
+    <div class="p-center-container">
 
-    <div class="big-color-div row">
-  
-    </div>
-
-    <div class="flex-box-div row">
-      <div class="p-image p-col">
-      <img src="{{ user.image_url }}" alt="image of user's car"/>
-      <p class="name">{{ user.first_name }} {{ user.last_name }}</p>
-      <p class="location">{{ user.city }}, {{ user.state }}</p>
-      
-    </div>
-
-    <div class="p-info p-col">
-      <h1 class="text-font-weight">Hello, {{ user.username }}</h1>
-      <div class="edit-profile">
-        <a href="/profile_update" class="edit-button">Edit Profile</a>
-        <a href="/create_meet_up_form" class="edit-button">Host Event</a>
+      <div class="big-color-div dash-col">
+        <div class="img-inner-content">
+           <img src="{{ user.image_url }}" alt="image of user's car"/>
+            <p class="name">{{ user.first_name }} {{ user.last_name }}</p>
+             <p class="location">{{ user.city }}, {{ user.state }}</p>
+        </div>
       </div>
-    </div>
 
-    </div>
+        <div class="flex-box-div dash-col">
+           <h1 class="text-font-weight">Hello, {{ user.username }}</h1>
+        
+          <div class="edit-profile">
+            <a href="/profile_update" class="edit-button">Edit Profile</a>
+            <a href="/create_meet_up_form" class="edit-button">Host Event</a>
+          </div>
 
+        </div>
+    </div>
   </div>
-</div>
 </section>
 
 <section class="delete-post-container">  
@@ -73,6 +68,7 @@
           <h4>{{ event.title }}</h4>
           <div class="p-event-info">
             <div class="p-event-inner-content">
+
               <div class="datetime-div">
                  <p>{{ event.date_time|datetime_format('%B %d, %Y') }} </p>
                  <p>{{ event.date_time|time_format('%H:%M %p') }}</p>
@@ -147,7 +143,10 @@
 {% block footer %}
 <footer class="footer">
   <div class="p-container">
-    <h2>Footer Content</h2>
+     <div class="footer-content">
+      <p>Car Meet <i class="fa-solid fa-car"></i></p>
+      <p>Created By Visay Vang, 2023</p>
+     </div>
   </div>
 </footer>
 {% endblock %}

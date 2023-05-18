@@ -8,6 +8,7 @@
 .create-meet-section {
   min-height: 80vh;
   padding: 1rem 0;
+  
 }
 .meet-up-container {
   width: min(80%, 90rem);
@@ -17,6 +18,8 @@
   align-items: flex-start;
   gap: 1rem;
   margin-top: 3rem;
+  min-height: 80vh;
+  border-bottom: 1px solid lightgray;
 }
 .meet-col {
   width: 50%;
@@ -43,7 +46,7 @@ form {
   border: none;
   border-bottom: 1px solid lightgray;
   padding: 0.7rem 0.2rem;
-  
+  margin-bottom: 1rem;
 }
 
 .button-group .btn {
@@ -64,6 +67,24 @@ form {
 .button-group .cancel-btn {
   text-decoration: none;
   color: lightcoral;
+}
+
+/*-----------------------------Footer----------------------------------*/
+.footer {
+  min-height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.center-content {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*---------------------------Media Query-------------------------*/

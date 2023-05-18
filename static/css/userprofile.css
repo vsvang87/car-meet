@@ -3,7 +3,7 @@
   
 }
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(243, 243, 243);
 }
 
 nav{
@@ -34,7 +34,7 @@ nav .navlinks li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 20vh;
+  min-height: 30vh;
   padding: 2rem 0;
 
 }
@@ -44,22 +44,15 @@ nav .navlinks li a {
  
 }
 .p-center-container {
+  min-height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  gap: 2rem;
+  background: #fff;
   border: 1px solid lightgray;
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
-  
-}
-.p-col {
-  width: 50%;
-}
-.p-center-container .p-image img {
-  clip-path: circle();
-  width: 30%;
-  
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .text-font-weight {
@@ -67,45 +60,41 @@ nav .navlinks li a {
   margin: 0 0 1rem 0;
   font-weight: 550;
 }
-.p-center-container .big-color-div {
-  background: linear-gradient(to right, rgb(157, 206, 238), rgb(158, 220, 228), rgb(170, 218, 139), rgb(255, 224, 224));
-  border-radius: 10px 10px 0 0;
-  width: 100%;
-}
 
-.p-center-container .row {
-  height: 200px;
-}
-.p-center-container .flex-box-div {
+/*---------------User Dashboard------------------------*/
+
+.big-color-div {
+  width: 40%;
+  background: rgb(46, 46, 46);
+  border-radius: 10px 0 0 10px;
+  min-height: 40vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
-  background: #fff;
-  border-radius: 0 0 10px 10px;
-  width: 100%;
-  height: 270px;
-}
-.p-center-container .flex-box-div .p-image {
-  margin-top: -12rem;
+  padding: 2rem 0;
 }
 .flex-box-div {
-  position: relative;
-}
-.flex-box-div .p-image {
-  position: absolute;
-  top: 5.5rem;
-  left: 2rem;
+  width: 60%;
+  text-align: center;
+  padding: 2rem 0;
   
 }
-.flex-box-div .p-image p {
-  padding-left: 2rem;
+.img-inner-content {
+  width: 50%;
+  margin: auto auto;
+}
+.img-inner-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+.img-inner-content p {
   margin: 0;
+  padding-bottom: 0.3rem;
 }
-.p-info {
-  position: absolute;
-  right: 0;
+.img-inner-content .name {
+  padding-top: 0.3rem;
 }
+
 /*----------------------City, State Form---------------------------*/
 .city-state-form {
   display: flex;
@@ -115,8 +104,11 @@ nav .navlinks li a {
   width: 100%;
   font-size: 1.2rem;
 }
-
+.edit-profile {
+  margin-top: 1.5rem;
+}
 .edit-button {
+  margin-right: 0.5rem;
   text-decoration: none;
   padding: 0.5rem .8rem;
   background: lightcoral;
@@ -141,7 +133,7 @@ nav .navlinks li a {
   background: #fff;
   border: 1px solid lightgray;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
  }
  .post-center-container h1 {
   padding: 1rem;
@@ -208,8 +200,15 @@ nav .navlinks li a {
 /*----------------------------Footer--------------------------*/
 .footer {
   min-height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
  /*-------------------------Modal Content---------------------*/
  .modal-bg {
   position: fixed;
@@ -309,6 +308,22 @@ nav .navlinks li a {
 }
 
 /*---------------------------Meida Query-----------------------------*/
+@media (max-width: 1100px) {
+  .p-center-container {
+    flex-direction: column;
+  }
+  .big-color-div {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .img-inner-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+}
+
+
+
 @media (max-width: 900px) {
   .p-center-container .p-image img {
   clip-path: circle();
@@ -347,5 +362,18 @@ nav .navlinks li a {
 @media (max-width: 550px) {
   .navlinks {
     flex-wrap: wrap;
+  }
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 520px) {
+  .edit-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
   }
 }

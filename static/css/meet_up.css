@@ -9,6 +9,23 @@ body {
   margin: 0;
 }
 
+/*----------------------------Scroll Bar---------------------------------*/
+::-webkit-scrollbar {
+    width: 1rem;
+}
+::-webkit-scrollbar-track {
+    background: rgb(199, 199, 199);
+    border-radius: 100vw;
+    margin-block: 0.5em;
+}
+::-webkit-scrollbar-thumb {
+  background: lightcoral;
+  border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 20%, 50%);
+}
+
 /*------------------------------Navbar-------------------------------------*/
 nav {
   font-size: 1.2rem;
@@ -187,8 +204,15 @@ section .bg-img-container{
 /*----------------------Footer-------------------------------*/
 .footer {
   min-height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /*----------------------Media Query-----------------------------*/
 @media (max-width: 900px) {
   
@@ -216,4 +240,19 @@ section .bg-img-container{
 .search-content {
   margin-left: 0;
 }
+}
+@media (max-width: 650px) {
+  .navbar-logo {
+    display: none;
+  }
+  .navlinks {
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+}
+@media (max-width: 400px) {
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+  }
 }

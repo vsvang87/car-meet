@@ -160,3 +160,8 @@ form .e-group-form input {
   width: min(80%, 90rem);
   margin-inline: auto;
 }
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
