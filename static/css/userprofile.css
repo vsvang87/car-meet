@@ -3,11 +3,11 @@
 }
 
 :root {
-  --clr-darkgray: rgb(76, 116, 131);
+  --clr-darkgray: rgb(68, 68, 68);
 }
 
 body {
-  background-color: rgb(243, 243, 243);
+  background-color: rgb(255, 255, 255);
 }
 
 nav{
@@ -32,6 +32,8 @@ nav .navlinks li a {
   color: black;
   text-decoration: none;
 }
+
+
 
 /*-----------------------------Section-----------------------------*/
 .user-profile {

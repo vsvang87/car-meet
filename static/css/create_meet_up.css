@@ -69,6 +69,10 @@ form {
   color: lightcoral;
 }
 
+.inner-content p {
+  letter-spacing: .05rem;
+  line-height: 1.5rem;
+}
 /*-----------------------------Footer----------------------------------*/
 .footer {
   min-height: 15vh;

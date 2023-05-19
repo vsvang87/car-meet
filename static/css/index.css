@@ -10,7 +10,7 @@ body {
 .home-page {
   width: 100%;
   position: relative; 
-  min-height: 70vh;
+  min-height: 100vh;
 }
 .home-page::after {
   content: '';
@@ -37,7 +37,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 70vh;
+  min-height: 100vh;
 }
 .intro-content {
   width: 50%;
@@ -47,16 +47,16 @@ body {
   font-size: 4rem;
   margin: 0;
 }
-.intro-content .font-family {
+/* .intro-content .font-family {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transition: all 1.5s;
   transform: translateY(-3em);
-}
-.login-div .btn {
+} */
+/* .login-div .btn {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transition: all 1.5s;
   transform: translateY(-3em);
-}
+} */
 
 .intro-content span {
   color: lightcoral;
