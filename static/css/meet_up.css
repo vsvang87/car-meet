@@ -221,7 +221,7 @@ section .bg-img-container{
  flex-wrap: wrap;
 }
   .state-city-container {
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 2rem;
 }
 .state-city-container .form-search {
@@ -229,13 +229,15 @@ section .bg-img-container{
   border-bottom: 1px solid lightgray;
   padding-bottom: 2rem;
 }
-
+.form-search form{
+  width: 100%;
+  align-items: center;
+}
 .form-search form input {
-  width: 67%;
+  width: 85%;
 }
 .form-col {
   width: 100%;
-  text-align: center;
 }
 .search-content {
   margin-left: 0;
@@ -250,7 +252,7 @@ section .bg-img-container{
     padding-left: 0;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 520px) {
   .footer-content {
     flex-direction: column;
     justify-content: center;

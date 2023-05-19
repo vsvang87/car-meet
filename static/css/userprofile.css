@@ -1,7 +1,11 @@
 * {
   font-family: 'Roboto', sans-serif; 
-  
 }
+
+:root {
+  --clr-darkgray: rgb(76, 116, 131);
+}
+
 body {
   background-color: rgb(243, 243, 243);
 }
@@ -53,10 +57,11 @@ nav .navlinks li a {
   border: 1px solid lightgray;
   border-radius: 10px 10px 10px 10px;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+  
 }
 
 .text-font-weight {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 0 0 1rem 0;
   font-weight: 550;
 }
@@ -65,7 +70,7 @@ nav .navlinks li a {
 
 .big-color-div {
   width: 40%;
-  background: rgb(46, 46, 46);
+  background: var(--clr-darkgray);
   border-radius: 10px 0 0 10px;
   min-height: 40vh;
   display: flex;
@@ -86,10 +91,12 @@ nav .navlinks li a {
 .img-inner-content img {
   width: 100%;
   border-radius: 10px;
+  border: 2px solid #fff;
 }
 .img-inner-content p {
   margin: 0;
   padding-bottom: 0.3rem;
+  color: #fff;
 }
 .img-inner-content .name {
   padding-top: 0.3rem;
@@ -134,6 +141,7 @@ nav .navlinks li a {
   border: 1px solid lightgray;
   border-radius: 10px;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+  
  }
  .post-center-container h1 {
   padding: 1rem;
@@ -159,14 +167,29 @@ nav .navlinks li a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 1px solid lightgray;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+  transition: .2s ease-in-out;
+  background: #fff;
  }
+/* .p-event-inner-content h4, p {
+  color: #fff;
+} */
+.p-event-info:hover {
+  transform: scale(1.017);
+}
+
  .p-event-info .p-event-inner-content {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1;
   gap: 1rem;
   width: 100%;
+  padding: 1rem;
+  place-items: center;
  }
+
 .p-event-inner-content .update-btn {
   border: 1px solid lightcoral;
   padding: 0.5rem 0.7rem;
