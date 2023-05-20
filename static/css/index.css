@@ -10,20 +10,21 @@ body {
 .home-page {
   width: 100%;
   position: relative; 
-  min-height: 100vh;
+  min-height: 85vh;
 }
 .home-page::after {
   content: '';
   position: absolute;
   inset: 0;
   display: block;
-  background-image: url(../image/white-nsx.jpg);
+  background-image: url(../image/supra3.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   filter: brightness(70%);
   opacity: 0.9;
   z-index: -1;
+  clip-path: polygon(25% 0%, 100% 0, 100% 83%, 0 100%, 0 68%, 0 0);
 }
 
 .base-container {
@@ -37,7 +38,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 100vh;
+  min-height: 85vh;
 }
 .intro-content {
   width: 50%;
@@ -47,16 +48,6 @@ body {
   font-size: 4rem;
   margin: 0;
 }
-/* .intro-content .font-family {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  transition: all 1.5s;
-  transform: translateY(-3em);
-} */
-/* .login-div .btn {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  transition: all 1.5s;
-  transform: translateY(-3em);
-} */
 
 .intro-content span {
   color: lightcoral;
@@ -97,12 +88,74 @@ body {
 
 
 /*-----------------------------Mid Container Layour-----------*/
-.three-container {
- display: flex;
- justify-content: center;
- align-items: center;
+.mid-section {
+ height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.mid-section .mid-info-content {
+  width: 85%;
+  text-align: center;
+  margin: 0 auto;
+}
+.mid-info-content span {
+  color: lightcoral;
+}
+.mid-info-content p {
+  font-size: 1.2rem;
+}
+/*------------------------Lower Content---------------------*/
+.lower-section {
+  height: 60vh;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(240, 240, 240);
+}
+.lower-section h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.lower-section .lower-info-content {
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.lower-col {
+  width: 33%;
+  height: 350px;
+  border: 1px solid lightgray;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+.lower-section i{
+  font-size: 3rem;
+  color: lightcoral;
+  margin-bottom: 1rem;
+}
+.lower-section .bold-text {
+  font-weight: bold;
+}
+/*-----------------------Footer----------------------------------*/
 
+footer {
+  background: rgb(63, 63, 63);
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-content {
+  color: #fff;
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /*------------------------------Media query------------------------*/
 

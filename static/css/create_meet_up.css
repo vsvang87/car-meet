@@ -18,6 +18,7 @@
   align-items: flex-start;
   gap: 1rem;
   margin-top: 3rem;
+  padding-bottom: 1rem;
   min-height: 80vh;
   border-bottom: 1px solid lightgray;
 }
@@ -45,7 +46,7 @@ form {
   outline: none;
   border: none;
   border-bottom: 1px solid lightgray;
-  padding: 0.7rem 0.2rem;
+  padding: .7rem 0.2rem;
   margin-bottom: 2rem;
 }
 
