@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, session, redirect
+from flask import Flask, render_template, request, flash, session, redirect, jsonify
 from model import connect_to_db, db, User, Meetup
 # from passlib.hash import argon2
 
@@ -146,9 +146,27 @@ def meet_up():
     state = request.args.get("state")
     city = request.args.get("city")
 
+   
     meetups = Meetup.query.filter(Meetup.state == state, Meetup.city == city).all()
 
     return render_template("meet_up.html", meetups=meetups, city=city, state=state)
+
+
+@app.route("/api/address")
+def address():
+
+    state = request.args.get("state")
+    city = request.args.get("city")
+
+    meetups = Meetup.query.filter(Meetup.state == state, Meetup.city == city).all()
+    addresses = []
+    for addrs in meetups:
+        addresses.append({
+            "address": addrs.address
+        })
+        
+    return jsonify(addresses)
+
 
 
 #-------------------------Create Meet Up Form-------------------#
@@ -168,13 +186,14 @@ def meetup():
     city = request.form.get("city")
     state = request.form.get("state")
     zipcode = request.form.get("zipcode")
+    description = request.form.get("description")
 
     user_id = session['user_id']
 
     if user_id is None:
         flash("You have to logged in to create event", "error")
     else:
-        meets = crud.meet_up(title, datetime, address, city, state, zipcode, user_id)
+        meets = crud.meet_up(title, datetime, address, city, state, zipcode, description, user_id)
         db.session.add(meets)
         db.session.commit()
         flash("Post is successful", "success")
@@ -182,7 +201,7 @@ def meetup():
     return redirect("/userprofile")
 
  
-
+#-------------------Update Events---------------------------#
 @app.route("/update_event", methods=["POST"])
 def update_event():
 
@@ -195,6 +214,7 @@ def update_event():
     city = request.form.get("city")
     state = request.form.get("state")
     zipcode = request.form.get("zipcode")
+    description = request.form.get("description")
 
     user_id = session.get('user_id')
     # grabbing the meet_up_id from crud operation
@@ -220,6 +240,9 @@ def update_event():
 
     if zipcode:
         meetup.zipcode = zipcode
+
+    if description:
+        meetup.description = description
   
     db.session.commit()
     flash("Event update successful", "success")
@@ -264,7 +287,7 @@ def user_profile_update():
     if state:
         user.state = state
        
-
+    
     db.session.commit()
     flash("Profile update successful", "success")
 

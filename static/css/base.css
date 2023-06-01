@@ -15,7 +15,7 @@ body {
   margin-inline: auto;
 }
 
-/*-----------------------Navabar------------------------*/
+
 nav {
   position: relative;
 }
@@ -83,7 +83,7 @@ nav {
   color:#fff;
 }
 
-/*-------------------------Footer-------------------------------*/
+
 .footer {
   min-height: 15vh;
   background: rgb(231, 231, 231);
@@ -127,7 +127,7 @@ align-items: center;
   font-size: 1.2rem;
   color: black;
 }
-/*-----------------------------Media Query-------------------*/
+
 
 @media (max-width: 820px) {
   .navlinks {

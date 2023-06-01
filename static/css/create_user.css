@@ -79,11 +79,6 @@ nav {
 }
 
 .form-container {
-  /* display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column; */
-  border: 1px solid lightslategray;
   background: #fff;
   border-radius: 10px;
   width: 100%;

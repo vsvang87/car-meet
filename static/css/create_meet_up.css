@@ -18,7 +18,7 @@
   align-items: flex-start;
   gap: 1rem;
   margin-top: 3rem;
-  padding-bottom: 1rem;
+  padding-bottom: 3rem;
   min-height: 80vh;
   border-bottom: 1px solid lightgray;
 }
@@ -40,14 +40,15 @@ form {
   margin-bottom: 0.7rem;
   width: 90%;
 }
-.form-group input {
+.form-group input, textarea {
   font-size: 1.2rem;
   width: 100%;
   outline: none;
-  border: none;
-  border-bottom: 1px solid lightgray;
+  border: 1px solid lightgray;
+  border-radius: 5px;
   padding: .7rem 0.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  resize: none;
 }
 
 .button-group .btn {

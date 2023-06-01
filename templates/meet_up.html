@@ -48,22 +48,37 @@
       </form>
      </div>
       <div class="search-content form-col" id="search-content">
+    
         {%if meetups%}
 
         {% for meetup in meetups %}
         <div class="meet-up-info">
+          
+
            <h3>{{ meetup.title }}</h3>
         <p>{{ meetup.date_time|datetime_format('%B %d, %Y') }} - {{ meetup.date_time|time_format('%H:%M %p') }}</p>
         <p id="address">{{ meetup.address }}</p>
         <p id="city-state-zip">{{ meetup.city }}, {{ meetup.state }} {{ meetup.zipcode }}</p>
+
+         <div class="event-description">
+          <p>{{ meetup.description }}</p>
         </div>
-       
+        </div>
+
         {% endfor %}
 
         {%else%}
           <p>There are no meet up in your area at this time.</p>
         {%endif%}
         
+        {% if hosts %}
+
+        {% for host in hosts %}
+
+        <p>Host By:{{ host.first_name }}</p>
+        {% endfor %}
+
+        {% endif %}
     </div>
     </div>
   </div>

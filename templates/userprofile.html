@@ -69,8 +69,6 @@
         <div class="post-inner-content">
         {% if events %}
           {% for event in events %}
-
-          
           <div class="p-event-info">
             <div class="p-event-inner-content">
 
@@ -82,6 +80,9 @@
                 <p>{{ event.address }}</p>
                 <p>{{ event.city }}, {{ event.state }} {{ event.zipcode }}</p>
             <form action="/delete_meetup/{{ event.meet_up_id }}" method="POST">
+              <div class="desc">
+                <p>{{ event.description }}</p>
+              </div>
               <div class="delete-btn-div">
                 <input type="submit" class="delete-btn" value="Delete"/> 
               </div>
@@ -132,6 +133,10 @@
         <label for="zipcode">Zipcode</label>
         <input type="text" name="zipcode" id="zipcode"/>
       </div>
+      <div class="e-form-group">
+        <textarea cols="10" rows="10" name="description" placeholder="Description"></textarea>
+      </div>
+
       <div class="e-form-group">
         <button type="submit" class="update-button">Update</button>
       </div>

@@ -6,7 +6,7 @@ body {
   padding: 0;
   margin: 0;
 }
-/*-----------------------Home Container-------------------------------*/
+
 .home-page {
   width: 100%;
   position: relative; 
@@ -87,9 +87,9 @@ body {
 }
 
 
-/*-----------------------------Mid Container Layour-----------*/
+
 .mid-section {
- height: 40vh;
+  min-height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,9 +105,9 @@ body {
 .mid-info-content p {
   font-size: 1.2rem;
 }
-/*------------------------Lower Content---------------------*/
+
 .lower-section {
-  height: 60vh;
+  min-height: 60vh;
   padding: 1rem 0;
   display: flex;
   justify-content: center;
@@ -120,7 +120,7 @@ body {
   color: lightcoral;
 }
 .lower-section .lower-info-content {
-   display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
@@ -129,6 +129,7 @@ body {
   width: 33%;
   height: 350px;
   border: 1px solid lightgray;
+  background: #fff;
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
@@ -142,18 +143,18 @@ body {
 .lower-section .bold-text {
   font-weight: bold;
 }
-/*-----------------------Footer----------------------------------*/
+
 
 footer {
   background: rgb(63, 63, 63);
-  height: 15vh;
+  min-height: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .footer-content {
   color: #fff;
-   display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }.footer-content p {
@@ -164,13 +165,32 @@ footer {
   color: #fff;
   padding-left: 0.5rem;
 }
-/*------------------------------Media query------------------------*/
 
+@media (max-width: 900px) {
+  .lower-section {
+    padding: 2.5rem 0;
+  }
+  .lower-info-content {
+    flex-direction: column;
+  }
+  .lower-col {
+    width: 100%;
+  }
+}
 @media (max-width: 820px) {
   .intro-content {
     width: 100%;
   }
   .hamburger-menu-div {
     position: absolute;
+  }
+}
+@media (max-width: 550px) {
+  .footer-content {
+    flex-direction: column;
+    margin: 0.5rem 0;
+  }
+  .footer-content p {
+    padding-bottom: 1rem;
   }
 }

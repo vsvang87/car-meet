@@ -21,7 +21,6 @@ class User(db.Model):
     image_url = db.Column(db.String, nullable=True)
 
     meet_ups = db.relationship("Meetup", back_populates="user")
-    # posts = db.relationship("Post", back_populates="user")
 
     def __repr__(self):
         return f"<User username={self.username} user_id={self.user_id}>"
@@ -40,6 +39,7 @@ class Meetup(db.Model):
     state = db.Column(db.String(50), nullable=True)
     zipcode = db.Column(db.Integer, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
+    description = db.Column(db.String(1500), nullable=True)
 
     user = db.relationship("User", back_populates="meet_ups")
 

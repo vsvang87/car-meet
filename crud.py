@@ -44,9 +44,9 @@ def get_user_by_id(user_id):
 
 
 #------------------Meet up Page-----------------------------------------#
-def meet_up(title, date_time, address, city, state, zipcode, user_id):
+def meet_up(title, date_time, address, city, state, zipcode, description, user_id):
 
-    meetup = Meetup(title=title, date_time=date_time, address=address, city=city, state=state, zipcode=zipcode, user_id=user_id)
+    meetup = Meetup(title=title, date_time=date_time, address=address, city=city, state=state, zipcode=zipcode, description=description, user_id=user_id)
 
     return meetup
 
