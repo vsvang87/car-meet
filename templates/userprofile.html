@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block title %}User Profile{% endblock %}
-
 {% block head %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,12 +8,7 @@
 <link rel="stylesheet" href="/static/css/navbar.css"/>
 <link rel="stylesheet" href="/static/css/userprofile.css"/>
 {% endblock %}
-
 {% block body %}
-
-
-
-
 <nav>
   <div class="navbar-container">
     <a href="/meet_up" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
@@ -22,11 +16,9 @@
     <li><a href="/meet_up" class="text-black">Search Event</a></li>
     <li><a href="/create_meet_up_form" class="text-black">Host Event</a></li>
     <li><a href="/logout" class="text-black">Log Out <i class="fa-solid fa-right-from-bracket"></i></a></li>
-  </ul>
-   
+  </ul> 
   </div>
 </nav>
-
    {% with messages = get_flashed_messages(with_categories=true)%}
       {% if messages %}
       {% for category, message in messages %}
@@ -36,11 +28,9 @@
       {% endfor %}
       {% endif %}
       {% endwith %}
- 
 <section class="user-profile">
   <div class="p-container">
     <div class="p-center-container">
-
       <div class="big-color-div dash-col">
         <div class="img-inner-content">
            <img src="{{ user.image_url }}" alt="image of user's car"/>
@@ -71,26 +61,28 @@
           {% for event in events %}
           <div class="p-event-info">
             <div class="p-event-inner-content">
-
-              <div class="datetime-div">
+              <div class="datetime-div col">
                 <h4>{{ event.title }}</h4>
-                 <p>{{ event.date_time|datetime_format('%B %d, %Y') }} </p>
-                 <p>{{ event.date_time|time_format('%H:%M %p') }}</p>
+                 <p>{{ event.date_time|datetime_format('%B %d, %Y') }} @ {{ event.date_time|time_format('%I:%M %p') }} </p>
+                 
               </div>
-                <p>{{ event.address }}</p>
+                <div class="address-div col">
+                  <p>{{ event.address }}</p>
                 <p>{{ event.city }}, {{ event.state }} {{ event.zipcode }}</p>
-            <form action="/delete_meetup/{{ event.meet_up_id }}" method="POST">
-              <div class="desc">
+                </div>
+                <div class="desc col">
                 <p>{{ event.description }}</p>
-              </div>
-              <div class="delete-btn-div">
-                <input type="submit" class="delete-btn" value="Delete"/> 
-              </div>
-            </form>
-            <div class="update-btn-div">
-                <button class="update-btn" id="id{{event.meet_up_id}}">Update</button>
-            </div>
-            
+                </div>
+             <div class="delete-update-div">
+               <form action="/delete_meetup/{{ event.meet_up_id }}" method="POST">   
+                <div class="delete-btn-div">
+                  <input type="submit" class="delete-btn" value="Delete"/> 
+                </div>     
+              </form>
+                <div class="update-btn-div">
+                  <button class="update-btn" id="id{{event.meet_up_id}}">Update</button>
+                </div>
+             </div>
             </div>
           </div>
         {% endfor %}
@@ -109,7 +101,9 @@
     <form action="/update_event" method="post" class="modal-form">
       <input type="hidden" id="meet_up_id" name="meet_up_id">
 
-      <div class="e-form-group">
+      <div class="modal-form-content">
+         <div class="group-left group-col">
+        <div class="e-form-group">
         <label for="title">Title</label>
         <input type="text" name="title" id="title"/>
       </div>
@@ -121,39 +115,39 @@
         <label for="address">Address</label>
         <input type="text" name="address" id="address"/>
       </div>
+      
+      </div>
+
+      <div class="group-right group-col">
+        <div class="e-form-group">
+        <label for="state">State</label>
+        <input type="text" name="state" id="state"/>
+      </div>
       <div class="e-form-group">
         <label for="city">City</label>
         <input type="text" name="city" id="city"/>
       </div>
       <div class="e-form-group">
-        <label for="state">State</label>
-        <input type="text" name="state" id="state"/>
-      </div>
-      <div class="e-form-group">
         <label for="zipcode">Zipcode</label>
         <input type="text" name="zipcode" id="zipcode"/>
       </div>
-      <div class="e-form-group">
-        <textarea cols="10" rows="10" name="description" placeholder="Description"></textarea>
+      
       </div>
-
+      </div>
+     
+      <div class="e-form-group">
+        <label for="description">Description</label>
+        <textarea cols="10" rows="10" name="description"></textarea>
+      </div>
       <div class="e-form-group">
         <button type="submit" class="update-button">Update</button>
       </div>
     </form>
   </div>
 </section>
-
 </div>
-
-
-
-
-
 <script src="/static/js/userprofile.js"></script>
 {% endblock %}
-
-
 {% block footer %}
 <footer class="footer">
   <div class="p-container">

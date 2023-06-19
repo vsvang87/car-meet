@@ -7,7 +7,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
 <link rel="stylesheet" href="/static/css/meet_up.css"/>
 {% endblock %}
 
@@ -54,13 +53,17 @@
         {% for meetup in meetups %}
         <div class="meet-up-info">
           
+        <div class="title-date col">
+          <h3>{{ meetup.title }}</h3>
+        <p>{{ meetup.date_time|datetime_format('%B %d, %Y') }} @ {{ meetup.date_time|time_format('%I:%M %p') }}</p>
+        </div>
 
-           <h3>{{ meetup.title }}</h3>
-        <p>{{ meetup.date_time|datetime_format('%B %d, %Y') }} - {{ meetup.date_time|time_format('%H:%M %p') }}</p>
-        <p id="address">{{ meetup.address }}</p>
+        <div class="address col">
+          <p id="address">{{ meetup.address }}</p>
         <p id="city-state-zip">{{ meetup.city }}, {{ meetup.state }} {{ meetup.zipcode }}</p>
+        </div>
 
-         <div class="event-description">
+         <div class="event-description col">
           <p>{{ meetup.description }}</p>
         </div>
         </div>

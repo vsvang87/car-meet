@@ -30,14 +30,14 @@ nav {
 }
 .navlinks li a {
   font-size: 1rem;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 5px;
   text-decoration: none;
   padding: 0.5rem 0.7rem;
   transition: 0.15s ease-in-out;
 }
 .navlinks li a:hover {
-  border: 1px solid lightcoral;
+  border: 2px solid lightcoral;
   color: lightcoral;
 }
 .text-black {

@@ -144,7 +144,7 @@ nav {
   color: black;
 }
 
-/*--------------------------Flash Messages------------------*/
+
 .success {
   color: rgb(0, 206, 0);
 }
@@ -156,7 +156,7 @@ nav {
   margin: 0;
 }
 
-/*------------------------Media Query------------------------*/
+
 @media (max-width:900px) {
   .form-container {
     width: 80%;

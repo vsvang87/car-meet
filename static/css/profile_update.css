@@ -7,7 +7,6 @@ html {
 body {
    padding: 0;
    margin: 0;
-   background: rgb(240, 240, 240);
 }
 
 /*-----------------Navbar--------------------------*/
@@ -21,7 +20,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 2px solid lightgray;
+  font-weight: bold;
+  letter-spacing: 0.07rem;
 }
 .navbar-logo {
   text-decoration: none;
@@ -39,14 +40,14 @@ nav {
 }
 .navlinks li a {
   font-size: 1rem;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 5px;
   text-decoration: none;
   padding: 0.5rem 0.7rem;
   transition: 0.15s ease-in-out;
 }
 .navlinks li a:hover {
-  border: 1px solid lightcoral;
+  border: 2px solid lightcoral;
   color: lightcoral;
 }
 .text-black {
@@ -99,7 +100,7 @@ nav {
   align-items: center;
   min-height: 70vh;
   padding-bottom: 2rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 2px solid lightgray;
 
 }
 .update-col {
@@ -123,7 +124,7 @@ form .e-group-form input {
   outline: none;
   border: 1px solid lightgray;
   width: 100%;
-  padding: 1rem 0.2rem;
+  padding: 0.7rem 0.2rem;
   border-radius: 5px;
   font-size: 1.2rem;
 }
@@ -142,7 +143,7 @@ form .e-group-form input {
 .update-button {
   border-radius: 5px;
   font-size: 1rem;
-  padding: 1rem 1rem;
+  padding: 0.7rem 1rem;
   margin-right: 0.5rem;
 }
 
@@ -163,4 +164,32 @@ form .e-group-form input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 870px) {
+  .navbar-logo {
+    display: none;
+  }
+}
+@media (max-width: 780px) {
+  .navlinks {
+    flex-wrap: wrap;
+  }
+ .e-container {
+  width: 100%;
+ }
+
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media (max-width: 520px) {
+  .edit-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

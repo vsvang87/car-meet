@@ -5,6 +5,8 @@
 :root {
   --clr-darkgray: rgb(68, 68, 68);
   --clr-lightgray: rgb(240, 240, 240);
+  --clr-lightBlue: rgb(241, 253, 255);
+  --clr-lightRed: rgb(255, 234, 234);
 }
 
 body {
@@ -16,10 +18,11 @@ nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  font-weight: bold;
+  letter-spacing: 0.07rem;
 }
 .navbar-container {
-  border-bottom: 1px solid lightgray;
+  border-bottom: 2px solid lightgray;
 }
 nav .navlinks {
   padding: 0;
@@ -60,9 +63,8 @@ nav .navlinks li a {
   align-items: center;
   gap: 2rem;
   background: #fff;
-  border: 1px solid lightgray;
   border-radius: 10px 10px 10px 10px;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
   
 }
 
@@ -70,6 +72,7 @@ nav .navlinks li a {
   font-size: 2rem;
   margin: 0 0 1rem 0;
   font-weight: 550;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /*---------------User Dashboard------------------------*/
@@ -103,6 +106,8 @@ nav .navlinks li a {
   margin: 0;
   padding-bottom: 0.3rem;
   color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.07rem;
 }
 .img-inner-content .name {
   padding-top: 0.3rem;
@@ -127,7 +132,8 @@ nav .navlinks li a {
   background: lightcoral;
   color: #fff;
   border-radius: 5px;
-  border: 1px solid lightcoral;
+  font-weight: bold;
+  border: 2px solid lightcoral;
   transition: 0.15s ease-in-out;
 }
 .edit-button:hover {
@@ -143,10 +149,9 @@ nav .navlinks li a {
  .post-center-container {
   width: min(80%, 90rem);
   margin-inline: auto;
-  background: #fff;
-  border: 1px solid lightgray;
+  background: var(--clr-lightRed);
   border-radius: 10px;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 20px 8px rgba(0, 0, 0, 0.1);
  }
  .post-center-container h1 {
   padding: 1rem;
@@ -157,74 +162,70 @@ nav .navlinks li a {
   min-height: 40vh;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
  }
  .post-inner-content {
-  width: 100%;
   padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+ }
+ .p-event-inner-content .col {
+  margin-bottom: 0.7rem;
  }
  .post-inner-content h4{
-  margin: 0;
+  margin: 0 0 0.7rem 0;
+  font-family: 'Ubuntu', sans-serif;
+ }
+ .post-inner-content p {
+  margin: 0.1rem;
  }
  .p-event-info {
   margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border: 1px solid lightgray;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
   transition: .2s ease-in-out;
   background: #fff;
+ 
  }
-/* .p-event-inner-content h4, p {
-  color: #fff;
-} */
+
 .p-event-info:hover {
   transform: scale(1.017);
 }
 
  .p-event-info .p-event-inner-content {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1;
-  gap: 1rem;
-  width: 100%;
   padding: 1rem;
-  place-items: center;
  }
+.p-event-info .p-event-inner-content .delete-update-div {
+  display: flex;
+}
+.p-event-info .p-event-inner-content .delete-update-div .update-btn {
+  margin-left: 0.5rem;
+}
 
 .p-event-inner-content .update-btn {
-  border: 1px solid lightcoral;
+  border: 2px solid lightcoral;
   padding: 0.5rem 0.7rem;
   background: lightcoral;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.15s ease-in-out;
+  font-weight: bold;
 }
-.p-event-inner-content .update-btn:hover {
-  background: transparent;
-  color: lightcoral;
-}
+
 /*----------------------delete button------------------------*/
 .p-event-inner-content form .delete-btn {
-  border: 1px solid lightcoral;
+  border: 2px solid lightcoral;
   background: transparent;
   padding: 0.5rem 0.7rem;
   color: lightcoral;
   border-radius: 5px;
   cursor: pointer;
-  transition: 0.15s ease-in-out;
+  font-weight: bold;
 }
-.p-event-inner-content form .delete-btn:hover {
-  background: lightcoral;
-  color: #fff;
-}
-.update-btn-div, .delete-btn-div {
-  text-align: right;
-}
+
 /*----------------------------Footer--------------------------*/
 .footer {
   min-height: 15vh;
@@ -237,7 +238,7 @@ nav .navlinks li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid lightgray;
+  border-top: 2px solid lightgray;
   padding-top: 2rem;
 }
  /*-------------------------Modal Content---------------------*/
@@ -264,8 +265,8 @@ nav .navlinks li a {
   border: 1px solid gray;
   border-radius: 10px;
   background: var(--clr-darkgray);
-  width: 500px;
-  height: 650px;
+  min-width: 500px;
+  min-height: 650px;
   margin: auto auto;
   display: none;
   position: relative;
@@ -278,25 +279,30 @@ nav .navlinks li a {
   width: 80%;
   margin: 0 auto;
  }
-.modal-form {
+.modal-form .modal-form-content {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-direction: column;
+  gap: 1.5rem; 
 }
-.modal-form .e-form-group {
+.modal-form .modal-form-content .group-col {
+  width: 50%;
+}
+
+.modal-form .modal-form-content .e-form-group {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  margin: 0.5rem 0;
+  margin: 0.8rem 0;
 }
 
-.modal-form .e-form-group input {
+.modal-form .e-form-group input, textarea {
   width: 98%;
   font-size: 1.2rem;
   outline: none;
+  resize: none;
   border: 1px solid lightgray;
   border-radius: 5px;
   padding: 0.5rem 0.2rem;
@@ -389,12 +395,12 @@ nav .navlinks li a {
 }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
   .navbar-logo {
     display: none;
   }
 }
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .navlinks {
     flex-wrap: wrap;
   }

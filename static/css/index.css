@@ -1,3 +1,8 @@
+:root {
+  --clr-lightRed: rgb(255, 223, 223);
+  --clr-lightBlue: rgb(225, 242, 255);
+  --clr-lightGreen: rgb(226, 255, 226);
+}
 html {
   scroll-behavior: smooth;
 }
@@ -6,7 +11,65 @@ body {
   padding: 0;
   margin: 0;
 }
+.center-content {
+  width: min(80%, 90rem);
+  margin-inline: auto;
+}
 
+nav {
+  position: relative;
+}
+
+
+.navbar-container {
+  font-size: 1.2rem;
+  width: min(80%, 90rem);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.navbar-logo {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+.navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navlinks li {
+  list-style: none;
+  padding: 2rem 0.7rem;
+}
+.navlinks li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.navlinks .login-button {
+  border: 1px solid lightcoral;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+   transition: 0.15s ease-in-out;
+}
+.navlinks .signup-button {
+  border: 1px solid lightcoral;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background: lightcoral;
+  color: #fff;
+
+}
+.navlinks .login-button:hover {
+  background: lightcoral;
+}
+.text-black {
+  color:#fff;
+}
 .home-page {
   width: 100%;
   position: relative; 

@@ -1,36 +1,29 @@
-{% extends "base.html" %}
-
-{% block head %}
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alata&family=Anton&family=Lato:wght@300&family=Lobster&family=Montserrat:wght@300&family=Nunito:wght@200&family=Pacifico&family=Poppins:ital,wght@1,100&family=Quicksand:wght@400;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link rel="stylesheet" href="/static/css/base.css"/>
+
 <link rel="stylesheet" href="/static/css/index.css"/>
-{% block title %}{% endblock %}
-{% endblock %}
-
-{% block body %}
-
-
-<section class="home-page">
+  <title>Car Meet</title>
+</head>
+<body>
+  <section class="home-page">
 <nav>
   <div class="navbar-container">
   <a href="#" class="navbar-logo">C M <i class="fa-solid fa-car"></i></a>
-
   <ul class="navlinks">
     <li><a href="/login" class="login-button">Login</a></li>
     <li><a href="/create_user" class="signup-button">Sign Up</a></li>
   </ul>
-  
-  </div>
-  <div class="hamburger-menu-div">
-    <button class="hamburger"><i class="fa-solid fa-bars"></i></button>
-  </div>
+ 
+  </div>  
 </nav>
-
-
   <div class="intro-container">
     <div class="intro-content">
       <h1>
@@ -86,13 +79,7 @@
       </div>
     </div>
   </section>
-
-
-{% endblock %}
-
-
-{% block footer %}
-<footer>
+  <footer>
   <div class="center-content">
     <div class="footer-content">
       <div class="logo-div">
@@ -109,4 +96,15 @@
     </div>
   </div>
 </footer>
-{% endblock %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

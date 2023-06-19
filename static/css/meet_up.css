@@ -9,7 +9,6 @@ body {
   margin: 0;
 }
 
-/*----------------------------Scroll Bar---------------------------------*/
 ::-webkit-scrollbar {
     width: 1rem;
 }
@@ -26,7 +25,6 @@ body {
   background: hsl(0, 20%, 50%);
 }
 
-/*------------------------------Navbar-------------------------------------*/
 nav {
   font-size: 1.2rem;
 
@@ -38,6 +36,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: bold;
+  letter-spacing: 0.07rem;
 }
 .navbar-logo {
   text-decoration: none;
@@ -59,21 +59,20 @@ nav {
 }
 .navlinks li a {
   font-size: 1rem;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 5px;
   text-decoration: none;
   padding: 0.5rem 0.7rem;
   transition: 0.15s ease-in-out;
 }
 .navlinks li a:hover {
-  border: 1px solid lightcoral;
+  border: 2px solid lightcoral;
   color: lightcoral;
 }
 .text-black {
   color:black;
 }
 
-/*----------------------------Main Section-----------------------------*/
 section .bg-img-container{
   background-image: url('../image/car-meet3.jpg');
   background-position: center;
@@ -103,13 +102,14 @@ section .bg-img-container{
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1rem;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 2px solid lightgray;
 }
 .host-meet-button {
-  border: 1px solid lightcoral;
+  border: 2px solid lightcoral;
   text-decoration: none;
   color: lightcoral;
-  padding: .8rem 1.5rem;
+  font-weight: bold;
+  padding: .7rem 1.5rem;
   border-radius: 5px;
   transition: 0.15s ease-in-out;
 }
@@ -120,21 +120,18 @@ section .bg-img-container{
 .state-city-container {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
-  padding: 2rem 0;
+  align-items: center;
+  padding: 2rem 0;min-height: 30vh;
   
 }
-.state-city-container .form-search {
-  border-right: 1px solid lightgray;
-}
+
 .state-city-container .search-content {
-  text-align: center;
-  
+  text-align: center; 
 }
 .state-city-container .search-content h3 {
   margin-top: 0;
 }
-/*---------------------Search Form----------------------------*/
+
 .form-search form {
   display: flex;
   justify-content: center;
@@ -148,24 +145,34 @@ section .bg-img-container{
 .form-col {
   width: 50%;
 }
-/*----------------------------meetup info------------------*/
+
 .search-content {
-  margin-left: 4rem;
+  height: 475px;
+  width: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;  
+  padding: 1rem;
+ /*  margin-left: 4rem;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 100%;
   overflow-x: auto;
-  overscroll-behavior-inline: contain;
+  overscroll-behavior-inline: contain; */
 }
 .meet-up-info {
   width: 80%;
-  padding-bottom: 1.2rem;
-  margin-bottom: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
   padding-top: 2rem;
   border: 1px solid lightgray;
   border-radius: 10px;
 }
-/*---------------------------end--------------------------*/
+.meet-up-info .col {
+  margin-bottom: 0.7rem;
+}
+.meet-up-info p {
+  margin: 0;
+}
 .state-selection {
   outline: none;
   border: 1px solid lightgray;
@@ -177,7 +184,7 @@ section .bg-img-container{
 .search-button {
   border: 1px solid transparent;
   background: lightcoral;
-  padding: .8rem 1.5rem;
+  padding: .7rem 1.5rem;
   color: #fff;
   font-size: 1rem;
   border-radius: 5px;
@@ -190,7 +197,7 @@ section .bg-img-container{
   border: 1px solid lightcoral;
 }
 
-/*-------------------------Google Maps-------------------------*/
+
 .search-container {
   min-height: 50vh;
   padding: 2rem 0;
@@ -201,7 +208,7 @@ section .bg-img-container{
   height: 60vh;
 }
 
-/*----------------------Footer-------------------------------*/
+
 .footer {
   min-height: 15vh;
   display: flex;
@@ -213,10 +220,10 @@ section .bg-img-container{
   justify-content: space-between;
   align-items: center;
 }
-/*----------------------Media Query-----------------------------*/
+
 @media (max-width: 900px) {
   
-/*---------------main section-------------------*/  
+
   .find-meet {
  flex-wrap: wrap;
 }

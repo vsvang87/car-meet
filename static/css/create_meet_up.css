@@ -1,14 +1,60 @@
 * {
     font-family: 'Roboto', sans-serif; 
 }
+nav {
+  font-size: 1.2rem;
+}
+
 .navbar-container {
-  border-bottom: 1px solid lightgray;
+  width: min(80%, 90rem);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+  font-weight: bold;
+  letter-spacing: 0.07rem;
+}
+.navbar-logo {
+  text-decoration: none;
+  color: #353535;
+   font-size: 1.5rem;
+}
+.navbar-logo img {
+  width: 50px;
+  height: 50px;
+}
+.navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navlinks li {
+  list-style: none;
+  padding: 2rem 1rem;
+}
+.navlinks li a {
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.5rem 0.7rem;
+  transition: 0.15s ease-in-out;
+}
+.navlinks li a:hover {
+  border: 2px solid lightcoral;
+  color: lightcoral;
+}
+.text-black {
+  color:black;
+}
+.login-button {
+  color: #fff;
 }
 
 .create-meet-section {
   min-height: 80vh;
   padding: 1rem 0;
-  
 }
 .meet-up-container {
   width: min(80%, 90rem);
@@ -20,13 +66,19 @@
   margin-top: 3rem;
   padding-bottom: 3rem;
   min-height: 80vh;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 2px solid lightgray;
+}
+.meet-form h1 {
+font-family: 'Ubuntu', sans-serif;
 }
 .meet-col {
   width: 50%;
 }
 .inner-content {
   padding-left: 1.5rem;
+}
+.inner-content h3 {
+  font-family: 'Ubuntu', sans-serif;
 }
 form {
   min-height: 50vh;
@@ -58,7 +110,6 @@ form {
   color: #fff;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  margin-top: 0.5rem;
   transition: 0.15s ease-in-out;
 }
 .button-group .submit-button {
@@ -75,7 +126,7 @@ form {
   letter-spacing: .05rem;
   line-height: 1.5rem;
 }
-/*-----------------------------Footer----------------------------------*/
+
 .footer {
   min-height: 15vh;
   display: flex;
@@ -93,7 +144,7 @@ form {
   align-items: center;
 }
 
-/*---------------------------Media Query-------------------------*/
+
 @media (max-width: 900px) {
   .meet-up-container {
     
