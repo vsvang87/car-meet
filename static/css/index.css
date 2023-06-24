@@ -1,7 +1,8 @@
 :root {
-  --clr-lightRed: rgb(255, 223, 223);
-  --clr-lightBlue: rgb(225, 242, 255);
-  --clr-lightGreen: rgb(226, 255, 226);
+  --clr-lightRed: rgb(255, 236, 236);
+  --clr-lightBlue: rgb(236, 247, 255);
+  --clr-lightGreen: rgb(255, 255, 238);
+  --clr-darkGray: rgb(88, 88, 88);
 }
 html {
   scroll-behavior: smooth;
@@ -29,6 +30,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   position: relative;
+  
 }
 .navbar-logo {
   text-decoration: none;
@@ -188,10 +190,18 @@ nav {
   align-items: center;
   gap: 1rem;
 }
+.lower-section .lower-info-content .lower-inner-user {
+  background: var(--clr-lightBlue);
+}
+.lower-section .lower-info-content .lower-inner-search {
+  background: var(--clr-lightRed);
+}
+.lower-section .lower-info-content .lower-inner-host {
+  background: var(--clr-lightGreen);
+}
 .lower-col {
   width: 33%;
   height: 350px;
-  border: 1px solid lightgray;
   background: #fff;
   padding: 1rem;
   border-radius: 10px;
@@ -200,7 +210,7 @@ nav {
 }
 .lower-section i{
   font-size: 3rem;
-  color: lightcoral;
+  color: var(--clr-darkGray);
   margin-bottom: 1rem;
 }
 .lower-section .bold-text {

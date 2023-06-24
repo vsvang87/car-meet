@@ -102,7 +102,7 @@ form .user-details .form-group {
 }
 .form-group input {
   width: 95%;
-  padding: 1rem 0.5rem;
+  padding: 0.7rem 0.3rem;
   outline: none;
   border: 1px solid lightgray;
   border-radius: 5px;
@@ -112,7 +112,7 @@ form .user-details .form-group {
 .form-group .create-user-button {
   width: 100%;
   margin-top: 0.5rem;
-  padding: 1rem 0.5rem;
+  padding: 0.7rem 0.5rem;
   border: 1px solid lightcoral;
   background: lightcoral;
   border-radius: 5px;

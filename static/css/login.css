@@ -85,7 +85,7 @@ nav {
   box-shadow: 5px 10px 5px 0 rgba(0, 0, 0, 0.2);
   width: 95%;
   max-width: 600px;
-  min-height: 55vh;
+  min-height: 50vh;
 }
 
 .form {
@@ -101,7 +101,7 @@ nav {
   outline: none;
   border: 1px solid lightgray;
   border-radius: 5px;
-  padding: 1rem 0.5rem;
+  padding: 0.7rem 0.3rem;
   box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .form-group .login-button {
@@ -114,7 +114,7 @@ nav {
 }
 .login-button {
   border: 1px solid lightcoral;
-  padding: 1rem 1rem;
+  padding: 0.7rem 0.5rem;
   border-radius: 5px;
   background: lightcoral;
   color: lightcoral;
