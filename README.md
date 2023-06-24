@@ -2,7 +2,7 @@ A car meet up web application for car enthusiasts to find or host their own meet
 
 Tech Stack: PostgreSQL, SQL Alchemy, Python, Flask, Jinja, HTML, CSS, JavaScript(ajax), Cloudinary API, Google Maps
 
-Data Model:
+Data Model:     
 
 Users:     |   Events:        
 -----------|---------------
